@@ -1,0 +1,159 @@
+{
+  "TabTitles": {
+    "home": "नेक्स्ट एप बनाउनुहोस्"
+  },
+
+  "Header": {
+    "News": "समाचार",
+    "English": "अंग्रेजी",
+    "Nepali": "नेपाली"
+  },
+
+  "nav": {
+    "home": "होम",
+    "about_us": "हाम्रो बारेमा",
+    "introduction": "परिचय",
+    "vision_mission": "दृष्टिकोण / मिशन",
+    "ReportOverview": "विधुत प्रतिवेदन अवलोकन",
+    "function_duties": "कार्य, कर्तव्य र अधिकार",
+    "commission": "आयोग",
+    "organizational_structure": "संगठनात्मक संरचना",
+    "chairperson_message": "अध्यक्षको सन्देश",
+    "employee_details": "कर्मचारी विवरण",
+    "laws_and_regulations": "कानून र नियमावली",
+    "act_rules": "ऐन र नियमहरू",
+    "bylaws": "उपविधि",
+    "directive": "निर्देशिका",
+    "grid_code": "ग्रिड कोड",
+    "manual": "म्यानुअल",
+    "proposed_draft": "प्रस्तावित मस्यौदा",
+    "status_of_application": "निवेदनको स्थिति",
+    "gallery": "ग्यालेरी",
+    "photo_gallery": "फोटो ग्यालेरी",
+    "video_gallery": "भिडियो ग्यालेरी",
+    "contact_us": "सम्पर्क गर्नुहोस्",
+    "e_filing": "ई-फाइलिङ"
+  },
+
+  "home": {
+    "Services": "सेवाहरू",
+    "LatestNotices": "पछिल्लो सूचनाहरू",
+    "Mandates": "आयोगको आदेश",
+    "Technical": "प्राविधिक व्यक्तित्वहरू",
+    "KnowMore": "थप जान्नुहोस्",
+    "SubmitComplaint": "उजुरी पेश गर्नुहोस्",
+    "Regular": "नियमित",
+    "NoDataAvailable": "डाटा उपलब्ध छैन",
+    "PublishedDate": "प्रकाशित मिति",
+    "viewProfile": "प्रोफाइल हेर्नुहोस्",
+    "message": "सन्देश"
+  },
+
+  "about": {
+    "Introduction": "परिचय",
+    "VisionAndMission": "दृष्टिकोण र मिशन",
+    "ReportOverview": "विधुत प्रतिवेदन अवलोकन",
+    "FunctionsDuties": "कार्य, कर्तव्य र अधिकारहरू",
+    "Commission": "आयोग",
+    "OrganizationalStructure": "संगठन संरचना",
+    "ChairpersonMessage": "अध्यक्षको सन्देश",
+    "EmployeeDetails": "कर्मचारी विवरण"
+  },
+
+  "contact": {
+    "GetInTouch": "सम्पर्कमा रहनुहोस्",
+    "GetTouchParagraph": "बिजुली नियमन सम्बन्धी सेवा, सहयोग र जानकारीको लागि हामीसँग जोडिनुहोस्।",
+    "firstNameLabel": "पहिलो नाम",
+    "firstNamePlaceholder": "आफ्नो पहिलो नाम लेख्नुहोस्",
+    "lastNameLabel": "थर",
+    "lastNamePlaceholder": "आफ्नो थर लेख्नुहोस्",
+    "contactLabel": "सम्पर्क नम्बर",
+    "contactPlaceholder": "सम्पर्क नम्बर लेख्नुहोस्",
+    "emailLabel": "इमेल",
+    "emailPlaceholder": "आफ्नो इमेल लेख्नुहोस्",
+    "messageLabel": "हामी तपाईंलाई के सहयोग गर्न सक्छौं?",
+    "messagePlaceholder": "तपाईंको सन्देश",
+    "submit": "पेश गर्नुहोस्",
+    "submitting": "पेश गर्दै..."
+  },
+
+  "FooterLinks": {
+    "Company": "कम्पनी",
+    "ImportantLinks": "महत्त्वपूर्ण लिङ्कहरू",
+    "AffiliatedOrganizations": "सम्बद्ध संगठनहरू",
+    "OfficeHours": "कार्यालय समय",
+    "TariffDetermination": "दर निर्धारण",
+    "LicensingInformation": "इजाजतपत्र सम्बन्धी जानकारी",
+    "ElectricityMarketRegulations": "विद्युत बजार नियमावली",
+    "PublicationsReports": "प्रकाशन तथा प्रतिवेदन",
+    "ConsumerRights": "उपभोक्ता अधिकार",
+    "NEA": "नेपाल विद्युत प्राधिकरण (NEA)",
+    "HelloSarkar": "हेल्लो सरकार",
+    "NepalLawCommission": "नेपाल कानुन आयोग",
+    "PublicProcurementMonitoring": "सार्वजनिक खरीद अनुगमन",
+    "MinistryEnergy": "ऊर्जा मन्त्रालय",
+    "Disclaimer": "अस्वीकरण",
+    "Copyright": "विद्युत नियामक आयोग © सर्वाधिकार सुरक्षित",
+    "Terms": "नियम र सर्त",
+    "Privacy": "गोपनीयता नीति"
+  },
+
+  "OrganizationSetting": {
+    "HeadOffice": "मुख्य कार्यालय",
+    "EmailUs": "इमेल गर्नुहोस्",
+    "CallUs": "फोन गर्नुहोस्",
+    "FaxNumber": "फ्याक्स नम्बर"
+  },
+
+  "Breadcrumb": {
+    "ContactUs": "हामीसँग सम्पर्क गर्नुहोस्",
+    "AboutUs": "हाम्रो बारेमा"
+  },
+
+  "ComplaintForm": {
+    "title": "गुनासो पेश गर्नुहोस्",
+    "firstNameLabel": "पहिलो नाम",
+    "firstNamePlaceholder": "आफ्नो पहिलो नाम लेख्नुहोस्",
+    "lastNameLabel": "थर",
+    "lastNamePlaceholder": "आफ्नो थर लेख्नुहोस्",
+    "phoneLabel": "सम्पर्क नम्बर",
+    "phonePlaceholder": "आफ्नो सम्पर्क नम्बर लेख्नुहोस्",
+    "emailLabel": "इमेल ठेगाना",
+    "emailPlaceholder": "आफ्नो इमेल ठेगाना लेख्नुहोस्",
+    "addressLabel": "ठेगाना",
+    "addressPlaceholder": "आफ्नो ठेगाना लेख्नुहोस्",
+    "descriptionLabel": "सेवा सम्बन्धी गुनासो",
+    "descriptionPlaceholder": "आफ्नो गुनासो विवरण दिनुहोस्",
+    "complainTypeLabel": "गुनासोको प्रकार",
+    "complainTypePlaceholder": "गुनासोको प्रकार छान्नुहोस्",
+    "type": {
+      "billing": "बिल सम्बन्धी समस्या",
+      "outage": "बत्ती गइसकेको समस्या",
+      "fluctuation": "भोल्टेज उतारचढाव",
+      "meter": "मिटर समस्या",
+      "other": "अन्य"
+    },
+    "uploadLabel": "कागजातहरू अपलोड गर्नुहोस्",
+    "uploadPlaceholder": "कुनै फाइल छानिएको छैन",
+    "submit": "पेश गर्नुहोस्",
+    "submitting": "पेश गर्दै...",
+    "reset": "रिसेट गर्नुहोस्",
+    "cancel": "रद्द गर्नुहोस्"
+  },
+
+  "Gallery": {
+    "PhotoGallery": "फोटो ग्यालेरी",
+    "VideoGallery": "भिडियो ग्यालरी"
+  },
+
+  "ComplaintStatus": {
+    "All": "सबै",
+    "UnderPreliminaryReview": "प्रारम्भिक समीक्षा अन्तर्गत",
+    "ReviewedAndCommentSaid": "समीक्षा गरिएको र टिप्पणी गरिएको",
+    "Approved": "स्वीकृत"
+  },
+
+  "docs": {
+    "noDocuments": "कुनै कागजात फेला परेन।"
+  }
+}

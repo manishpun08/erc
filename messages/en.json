@@ -1,0 +1,166 @@
+{
+  "TabTitles": {
+    "home": "Create Next App"
+  },
+
+  "Header": {
+    "News": "News",
+    "English": "English",
+    "Nepali": "Nepali"
+  },
+
+  "nav": {
+    "home": "Home",
+    "about_us": "About Us",
+    "introduction": "Introduction",
+    "vision_mission": "Vision/Mission",
+    "ReportOverview": "Electricity Report Overview",
+    "function_duties": "Function, Duties & Auth.",
+    "commission": "Commission",
+    "organizational_structure": "Organizational Strut",
+    "chairperson_message": "Chairperson Message",
+    "employee_details": "Employee Details",
+    "laws_and_regulations": "Laws & Regulations",
+    "act_rules": "Act & Rules",
+    "bylaws": "ByLaws",
+    "directive": "Directive",
+    "grid_code": "Grid Code",
+    "manual": "Manual",
+    "proposed_draft": "Proposed Draft",
+    "status_of_application": "Status of Application",
+    "gallery": "Gallery",
+    "photo_gallery": "Photo Gallery",
+    "video_gallery": "Video Gallery",
+    "contact_us": "Contact Us",
+    "e_filing": "E-Filing"
+  },
+
+  "home": {
+    "Services": "Services",
+    "LatestNotices": "Latest Notices",
+    "Mandates": "Mandates of the Commission",
+    "Technical": "Technical Personalities",
+    "KnowMore": "Know More",
+    "SubmitComplaint": "Submit a Complaint",
+    "Regular": "Regular",
+    "NoDataAvailable": "Data is not Available",
+    "PublishedDate": "Published Date",
+    "viewProfile": "View Profile",
+    "message": "Message"
+  },
+
+  "about": {
+    "Introduction": "Introduction",
+    "VisionAndMission": "Vision and Mission",
+    "ReportOverview": "Electricity Report Overview",
+    "FunctionsDuties": "Functions, Duties & Authorities",
+    "Commission": "Commission",
+    "OrganizationalStructure": "Organizational Structure",
+    "ChairpersonMessage": "Message from Chairperson",
+    "EmployeeDetails": "Employee Details"
+  },
+
+  "contact": {
+    "GetInTouch": "Get In Touch",
+    "GetTouchParagraph": "Connect with us for services, support, and information related to electricity regulation.",
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "Enter Your First Name",
+    "lastNameLabel": "Last Name",
+    "lastNamePlaceholder": "Enter Your Last Name",
+    "contactLabel": "Contact Number",
+    "contactPlaceholder": "Enter Your Contact Number",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter Your Email Address",
+    "messageLabel": "What can we help you with?",
+    "messagePlaceholder": "Your message",
+    "submit": "Submit",
+    "submitting": "Submitting..."
+  },
+
+  "FooterLinks": {
+    "Company": "Company",
+    "ImportantLinks": "Important Links",
+    "AffiliatedOrganizations": "Affiliated Organizations",
+    "OfficeHours": "Office Hours",
+    "TariffDetermination": "Tariff Determination",
+    "LicensingInformation": "Licensing Information",
+    "ElectricityMarketRegulations": "Electricity Market Regulations",
+    "PublicationsReports": "Publications & Reports",
+    "ConsumerRights": "Consumer Rights",
+    "NEA": "Nepal Electricity Authority (NEA)",
+    "HelloSarkar": "Hello Sarkar",
+    "NepalLawCommission": "Nepal Law Commission",
+    "PublicProcurementMonitoring": "Public Procurement Monitoring",
+    "MinistryEnergy": "Ministry of Energy",
+    "Disclaimer": "Disclaimer",
+    "Copyright": "Electricity Regulatory Commission © All Rights Reserved",
+    "Terms": "Terms & Condition",
+    "Privacy": "Privacy Policy"
+  },
+
+  "OrganizationSetting": {
+    "HeadOffice": "Head Office",
+    "EmailUs": "Email Us",
+    "CallUs": "Call Us",
+    "FaxNumber": "Fax Number"
+  },
+
+  "Breadcrumb": {
+    "ContactUs": "Contact Us",
+    "AboutUs": "About Us",
+    "ApplicationStatus": "Application Status"
+  },
+
+  "ComplaintForm": {
+    "title": "Submit a Complaint",
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastNameLabel": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
+    "phoneLabel": "Contact Number",
+    "phonePlaceholder": "Enter your contact number",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "addressLabel": "Address",
+    "addressPlaceholder": "Enter your address",
+    "descriptionLabel": "Service Complaint",
+    "descriptionPlaceholder": "Describe your complaint",
+    "complainTypeLabel": "Complaint Type",
+    "complainTypePlaceholder": "Select Complaint Type",
+    "type": {
+      "billing": "Billing Issue",
+      "outage": "Power Outage",
+      "fluctuation": "Voltage Fluctuation",
+      "meter": "Meter Problem",
+      "other": "Other"
+    },
+    "uploadLabel": "Upload Documents",
+    "uploadPlaceholder": "No File Chosen",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "reset": "Reset",
+    "cancel": "Cancel"
+  },
+
+  "Gallery": {
+    "PhotoGallery": "Photo Gallery",
+    "VideoGallery": "Video Gallery"
+  },
+
+  "ComplaintStatus": {
+    "All": "All",
+    "UnderPreliminaryReview": "Under Preliminary Review",
+    "ReviewedAndCommentSaid": "Reviewed And Comment Said",
+    "Approved": "Approved"
+  },
+
+  "dateFormat": {
+    "year": "numeric",
+    "month": "2-digit",
+    "day": "2-digit"
+  },
+
+  "docs": {
+    "noDocuments": "No documents found."
+  }
+}
