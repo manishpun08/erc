@@ -1,36 +1,72 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import NepaliDate from "nepali-date-converter";
+import { useEffect, useState } from "react";
+import * as bs from "bikram-sambat";
 
-const engToNepaliDigits = (str: string | number) =>
-  String(str).replace(/\d/g, (d) => "०१२३४५६७८९"[+d]);
+// Convert English digits to Nepali digits
+const engToNepaliDigits = (str: string | number): string =>
+  String(str).replace(/\d/g, (d) => "०१२३४५६७८९"[parseInt(d)]);
 
-const formatNepaliDate = (
-  bsDayIndex: number,
-  bsMonth: number,
-  bsDate: number,
-  bsYear: number,
-  convertDigits = false
-) => {
-  const bsMonthNames = [
-    "बैशाख",
-    "जेष्ठ",
-    "आषाढ",
-    "श्रावण",
-    "भदौ",
-    "आश्विन",
-    "कार्तिक",
-    "मंसिर",
-    "पुष",
-    "माघ",
-    "फाल्गुन",
-    "चैत्र",
-  ];
+// BS Month mapping interface
+interface BSMonthMap {
+  [key: number]: {
+    nepali: string;
+    english: string;
+  };
+}
 
-  const bsDayNames = [
+const getNepaliDate = (
+  englishDate: Date
+): {
+  year: number;
+  monthNepali: string;
+  monthEnglish: string;
+  date: number;
+} => {
+  try {
+    const dateString = englishDate.toISOString().split("T")[0]; // e.g., "2025-06-23"
+    const bsDateString: string = bs.toBik_euro(dateString); // Returns "2082-03-09"
+
+    const [year, month, date] = bsDateString.split("-").map(Number);
+
+    const monthMap: BSMonthMap = {
+      1: { nepali: "बैशाख", english: "Baisakh" },
+      2: { nepali: "जेष्ठ", english: "Jestha" },
+      3: { nepali: "आषाढ", english: "Aashadha" },
+      4: { nepali: "श्रावण", english: "Shrawan" },
+      5: { nepali: "भदौ", english: "Bhadra" },
+      6: { nepali: "आश्विन", english: "Ashwin" },
+      7: { nepali: "कार्तिक", english: "Kartik" },
+      8: { nepali: "मंसिर", english: "Mangsir" },
+      9: { nepali: "पुष", english: "Poush" },
+      10: { nepali: "माघ", english: "Magh" },
+      11: { nepali: "फाल्गुन", english: "Falgun" },
+      12: { nepali: "चैत्र", english: "Chaitra" },
+    };
+
+    return {
+      year,
+      monthNepali: monthMap[month].nepali,
+      monthEnglish: monthMap[month].english,
+      date,
+    };
+  } catch (error) {
+    console.error("Nepali date conversion error:", error);
+    // Fallback to static values
+    return {
+      year: 2082,
+      monthNepali: "आषाढ",
+      monthEnglish: "Aashadha",
+      date: 9,
+    };
+  }
+};
+
+// Get Nepali or English weekday
+const getNepaliDay = (date: Date, isEnglish: boolean = false): string => {
+  const daysNepali = [
     "आइतबार",
-    "सोमबार",
+    "सोमवार",
     "मङ्गलबार",
     "बुधबार",
     "बिहीबार",
@@ -38,22 +74,29 @@ const formatNepaliDate = (
     "शनिबार",
   ];
 
-  const dateStr = convertDigits ? engToNepaliDigits(bsDate) : bsDate;
-  const yearStr = convertDigits ? engToNepaliDigits(bsYear) : bsYear;
+  const daysEnglish = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
-  return `${bsDayNames[bsDayIndex]}, ${bsMonthNames[bsMonth - 1]} ${dateStr}, ${yearStr}`;
+  return isEnglish ? daysEnglish[date.getDay()] : daysNepali[date.getDay()];
 };
 
-const DateTimeToggle = () => {
+const DateTimeToggle: React.FC = () => {
   const [locale, setLocale] = useState<"en" | "np">("en");
-  const [now, setNow] = useState(new Date());
+  const [now, setNow] = useState<Date>(new Date());
 
   useEffect(() => {
-    // Read locale from cookie or default
+    // Read locale from cookie
     const cookieLocale = document.cookie
       .split("; ")
       .find((row) => row.startsWith("MYNEXTAPP_LOCALEMANISH="))
-      ?.split("=")[1];
+      ?.split("=")[1] as "en" | "np" | undefined;
 
     setLocale(cookieLocale === "np" ? "np" : "en");
 
@@ -61,38 +104,35 @@ const DateTimeToggle = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const date =
+  const nepaliDate = getNepaliDate(now);
+  const dayName = getNepaliDay(now, locale === "en");
+
+  const formattedDate =
     locale === "np"
-      ? (() => {
-          const nd = new NepaliDate(
-            now.getFullYear(),
-            now.getMonth() + 1,
-            now.getDate()
-          );
-          return formatNepaliDate(
-            nd.getDay(),
-            nd.getMonth(),
-            nd.getDate(),
-            nd.getYear(),
-            true
-          );
-        })()
-      : now.toLocaleDateString("en-US", {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
+      ? `${engToNepaliDigits(nepaliDate.date)} ${nepaliDate.monthNepali} ${engToNepaliDigits(nepaliDate.year)}, ${dayName}`
+      : `${nepaliDate.date} ${nepaliDate.monthEnglish} ${nepaliDate.year}, ${dayName}`;
+
+  const formattedTime =
+    locale === "np"
+      ? engToNepaliDigits(
+          now.toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true,
+          })
+        )
+      : now.toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: true,
         });
 
-  const time =
-    locale === "np"
-      ? engToNepaliDigits(now.toLocaleTimeString("en-US", { hour12: true }))
-      : now.toLocaleTimeString("en-US", { hour12: true });
-
   return (
-    <div className="flex flex-col text-white font-semibold typography-p-regular pr-6">
-      <div>{date}</div>
-      <div>{time}</div>
+    <div>
+      <div>{formattedDate}</div>
+      <div>{formattedTime}</div>
     </div>
   );
 };
