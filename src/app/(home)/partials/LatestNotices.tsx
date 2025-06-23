@@ -34,7 +34,7 @@ const ServiceLatestNotices: React.FC<Props> = ({ serviceData }) => {
         {/* right  */}
         <div className="w-full">
           <h2 className="text-text-500 typography-h3 font-bold leading-[150%] pb-[1.25rem]">
-            {t("ServiceLatestNotices")}
+            {t("LatestNotices")}
           </h2>
           <NoticeTab />
         </div>
