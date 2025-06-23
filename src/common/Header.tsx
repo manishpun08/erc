@@ -71,8 +71,7 @@ const Header = async () => {
                 className="w-[3.5rem] sm:w-[4.5rem] md:w-[4.875rem] aspect-square flex-shrink-0"
               >
                 <Image
-                  // src={headerData?.erc_logo}
-                  src="/erc_logo.png"
+                  src={headerData?.erc_logo || "/erc_logo.png"}
                   alt="logo"
                   width={1000}
                   height={1000}
