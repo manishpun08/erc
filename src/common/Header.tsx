@@ -41,9 +41,9 @@ const Header = async () => {
           </div>
 
           {/* Logos */}
-          <div className="relative z-20 flex flex-row justify-between gap-4 md:gap-0">
+          <div className="relative z-20 flex flex-col lg:flex-row  justify-between gap-5 md:gap-0">
             {/* Left Logo */}
-            <div className="flex gap-3 items-center ">
+            <div className="flex gap-3 items-center w-fit ">
               <Link
                 href="/"
                 className="w-[4.5rem] sm:w-[5rem] md:w-[5.47988rem] aspect-[87.68/74] flex-shrink-0 "
@@ -81,7 +81,7 @@ const Header = async () => {
             </div>
 
             {/* Right Logo */}
-            <div className="flex flex-row gap-2 sm:gap-4 items-center ">
+            <div className="flex flex-row gap-2 sm:gap-4 items-center justify-center w-full lg:w-fit">
               <DateTimeDisplay />
 
               <div className="hidden lg:block w-[2.5rem] sm:w-[2.75rem] md:w-[3rem] aspect-[24/31] flex-shrink-0 ml-6 sm:ml-0 ">

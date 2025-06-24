@@ -17,7 +17,7 @@ export default function Accordion({ items }: AccordionProps) {
   return (
     <>
       <h3 className="text-black typography-h3 leading-[150%] font-semibold pb-4">
-        FQAs
+        {` FAQ'S`}
       </h3>
 
       <div className="w-full lg:w-2xl mx-auto space-y-4">
@@ -48,13 +48,12 @@ export default function Accordion({ items }: AccordionProps) {
                 }`}
               ></div>
             </button>
-            <div
+            <p
               className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
                 activeIndex === index ? "max-h-40 py-4" : "max-h-0"
               } bg-white typography-p1-regular  text-text-500`}
-            >
-              {item?.answer}
-            </div>
+              dangerouslySetInnerHTML={{ __html: item?.answer || "" }}
+            />
           </div>
         ))}
       </div>

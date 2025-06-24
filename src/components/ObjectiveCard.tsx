@@ -18,11 +18,11 @@ const ObjectiveCard = ({
         <button className="mx-auto w-11 h-11 p-5 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 text-[1.25rem] font-bold leading-[120%]">
           {ordering}
         </button>
-        <p className="mt-5 typography-p-large-semi-bold text-text-400 group-hover:text-white text-center">
+        <p className="mt-5 typography-p-large-semi-bold text-text-400 group-hover:text-white text-center text-wrap">
           {title}
         </p>
         <p
-          className="mt-5 typography-p-regular text-text-400 group-hover:text-white text-center"
+          className="mt-5 typography-p-regular text-text-400 group-hover:text-white text-center text-wrap"
           dangerouslySetInnerHTML={{ __html: description || "" }}
         />
       </div>

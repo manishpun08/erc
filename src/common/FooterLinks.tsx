@@ -1,3 +1,4 @@
+import { PATH } from "@/constant/path";
 import { IImportantLinks } from "@/Interface/footerLinks.interface";
 import {
   IOrganizationSettingDaum,
@@ -32,7 +33,7 @@ export const Company: React.FC<ICompany> = ({ footerData }) => {
   return (
     <div>
       <h3 className="mb-[1.5rem] text-white typography-p-large font-semibold">
-        {t("Company")}
+        {t("ContactUs")}
       </h3>
 
       <ul className="text-white font-medium typography-p-regular">
@@ -88,6 +89,11 @@ export const Company: React.FC<ICompany> = ({ footerData }) => {
               )}
             </li>
           )}
+          <Link href={PATH.public_hearing}>
+            <button className="mt-4 text-blue-500 uppercase font-semibold bg-white px-4 py-2 rounded-[0.5rem] text-sm hover:bg-blue-600 hover:text-white cursor-pointer transform transition duration-500 ease-in-out delay-75">
+              {t("PublicHearing")}
+            </button>
+          </Link>
         </div>
       </ul>
     </div>
