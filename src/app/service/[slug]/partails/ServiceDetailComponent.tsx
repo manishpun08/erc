@@ -19,7 +19,7 @@ const ServiceDetailComponent: React.FC<Props> = ({ serviceDetail }) => {
   const files = serviceDetail?.files || [];
 
   return (
-    <div className="w-4xl mx-auto my-10">
+    <div className="max-w-4xl mx-5 lg:mx-auto my-10">
       {files?.map((file, index) => {
         return (
           <div

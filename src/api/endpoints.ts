@@ -63,9 +63,9 @@ export const endpoints: Endpoints = {
 
   about: "/about/list/",
   serviceDetail: "/services/detail/",
-  homeTeam: "/commission/list/",
+  homeTeam: "team/list/",
   teamDetail: "/commission/detail/",
-  chairperson: "/commission/chairperson-message/",
+  chairperson: "team/chairperson-message/list/",
   document: "/document/list/",
 
   subcategory: "/maincategory/detail/",

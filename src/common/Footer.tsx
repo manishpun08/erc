@@ -66,9 +66,9 @@ const Footer: React.FC = async () => {
         {/* links  */}
         <div className="pt-[1.5rem] lg:pt-[2.5rem] pb-[1.44rem] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2.88rem]">
           {/* Company Section */}
-          <Company footerData={footerData} />
 
           <ImportantLinksSection importantLinksData={importantLinksData} />
+          <Company footerData={footerData} />
 
           <OfficeHorus officeData={footerData?.office_hours} />
         </div>
