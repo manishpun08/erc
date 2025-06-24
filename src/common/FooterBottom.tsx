@@ -45,7 +45,7 @@ const FooterBottom: React.FC<IProps> = ({ footerData }) => {
             <p>{t("Copyright")}</p>
           </div>
           <div className="flex gap-2 lg:gap-[1.25rem] typography-p-regular z-10 font-semibold text-white">
-            <Link href={PATH.faq}>Faq's</Link>
+            <Link href={PATH.faq}>{`Faq's`}</Link>
             <Link href="/terms-condition">{t("Terms")}</Link>
             <Link href="/privacy-policy">{t("Privacy")}</Link>
           </div>

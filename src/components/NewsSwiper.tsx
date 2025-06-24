@@ -16,7 +16,10 @@ const NewsSwiper: React.FC<NewsSwiperProps> = ({ newsData }) => {
     <div className="overflow-hidden">
       <Marquee pauseOnHover={true} pauseOnClick={true} speed={80}>
         {newsData.map((item, index) => (
-          <div className="text-white px-5 cursor-pointer text-xs md:text-base">
+          <div
+            key={index}
+            className="text-white px-5 cursor-pointer text-xs md:text-base"
+          >
             <Link
               href={`/news/${item?.slug}`}
               className="hover:underline whitespace-nowrap"
