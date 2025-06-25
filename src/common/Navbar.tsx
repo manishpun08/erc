@@ -85,7 +85,6 @@ const Navbar = async () => {
     );
     const NewLinks = [...dynamicLinks, ...staticLinks];
     const sortedLinks = NewLinks.sort((a, b) => a.ordering - b.ordering);
-    console.log("sortedLinks", sortedLinks);
     return (
       <nav className="bg-background-100">
         <MobileNavbar sortedLinks={sortedLinks} />
