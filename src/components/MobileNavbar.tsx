@@ -7,11 +7,10 @@ import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 interface Props {
-  dynamicData: INavLinksCategory[];
-  staticData: INavLinksCategory[];
+  sortedLinks: INavLinksCategory[];
 }
 
-const MobileNavbar: React.FC<Props> = ({ dynamicData, staticData }) => {
+const MobileNavbar: React.FC<Props> = ({ sortedLinks }) => {
   const t = useTranslations("nav");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -91,8 +90,7 @@ const MobileNavbar: React.FC<Props> = ({ dynamicData, staticData }) => {
 
       {mobileMenuOpen && (
         <div className="mt-4 flex flex-col gap-4">
-          {renderNavItems(staticData, true)}
-          {renderNavItems(dynamicData, false)}
+          {renderNavItems(sortedLinks, true)}
 
           <button className="mt-4 text-white uppercase font-semibold bg-blue-500 px-4 py-2 rounded-[0.5rem]">
             dms

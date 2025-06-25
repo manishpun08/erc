@@ -69,7 +69,7 @@ const Navbar = async () => {
           id: `static-${index}`,
           name: data?.name,
           main_ctg_slug: data?.url,
-          ordering: index,
+          ordering: data?.ordering,
           subcategories:
             data?.dropdown?.map((item: INavLinksSubcategory, idx: number) => ({
               id: `sub-${index}-${idx}`,
@@ -83,11 +83,13 @@ const Navbar = async () => {
         };
       }
     );
-
+    const NewLinks = [...dynamicLinks, ...staticLinks];
+    const sortedLinks = NewLinks.sort((a, b) => a.ordering - b.ordering);
+    console.log("sortedLinks", sortedLinks);
     return (
       <nav className="bg-background-100">
-        <MobileNavbar dynamicData={dynamicLinks} staticData={staticLinks} />
-        <DesktopNavbar dynamicData={dynamicLinks} staticData={staticLinks} />
+        <MobileNavbar sortedLinks={sortedLinks} />
+        <DesktopNavbar sortedLinks={sortedLinks} />
       </nav>
     );
   } catch (error) {

@@ -31,7 +31,7 @@ export default function DocumentCard({
       <div>
         <Link
           href={`${PATH.ACT}/${slugBefore}/${slug}`}
-          className="typography-p-large text-text-500 font-medium group-hover:text-blue-500 transition-colors duration-300"
+          className="typography-p-regular text-text-500 font-medium group-hover:text-blue-500 transition-colors duration-300"
         >
           {title}
         </Link>

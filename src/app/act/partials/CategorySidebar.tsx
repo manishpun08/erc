@@ -14,7 +14,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({
 }) => {
   return (
     <aside className="bg-[rgba(216,235,247,0.60)] rounded-[0.75rem] p-[1.25rem]">
-      <h2 className="typography-p-large text-text-500 font-semibold mb-[1.25rem]">
+      <h2 className="typography-p-regular text-text-500 font-semibold mb-[1.25rem]">
         {selectedCategory}
       </h2>
 
@@ -23,7 +23,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({
           <button
             key={category.id}
             onClick={() => onCategoryClick(category)}
-            className={`py-3 px-4 text-left rounded-md transition-colors ${
+            className={`py-3 px-4 text-left rounded-md transition-colors typography-p-small ${
               selectedCategory === category?.name
                 ? "bg-blue-300 text-white"
                 : "bg-white hover:bg-blue-100"

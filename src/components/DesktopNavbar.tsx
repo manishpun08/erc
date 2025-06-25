@@ -7,11 +7,10 @@ import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 
 interface Props {
-  dynamicData: INavLinksCategory[];
-  staticData: INavLinksCategory[];
+  sortedLinks: INavLinksCategory[];
 }
 
-const DesktopNavbar: React.FC<Props> = ({ dynamicData, staticData }) => {
+const DesktopNavbar: React.FC<Props> = ({ sortedLinks }) => {
   const t = useTranslations("nav");
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
@@ -86,9 +85,9 @@ const DesktopNavbar: React.FC<Props> = ({ dynamicData, staticData }) => {
 
   return (
     <div className="hidden md:flex items-center py-3 padding-x">
-      <div className="flex flex-wrap gap-[1.9rem] items-center ">
-        {renderNavItems(staticData, true)}
-        {renderNavItems(dynamicData, false)}
+      <div className="flex flex-wrap gap-[1.5rem] items-center ">
+        {renderNavItems(sortedLinks, true)}
+        {/* {renderNavItems(dynamicData, false)} */}
 
         <Link
           href={"http://dms.erc.gov.np/a_Login.aspx?ReturnUrl=%2f"}

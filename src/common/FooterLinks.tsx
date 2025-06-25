@@ -36,7 +36,7 @@ export const Company: React.FC<ICompany> = ({ footerData }) => {
         {t("ContactUs")}
       </h3>
 
-      <ul className="text-white font-medium typography-p-regular">
+      <ul className="text-white font-medium typography-p-small">
         <div className="space-y-[1.25rem] cursor-pointer">
           {/* Organization Name */}
           {footerData?.org_name_eng && <li>{footerData.org_name_eng}</li>}
@@ -90,7 +90,7 @@ export const Company: React.FC<ICompany> = ({ footerData }) => {
             </li>
           )}
           <Link href={PATH.public_hearing}>
-            <button className="mt-4 text-blue-500 uppercase font-semibold bg-white px-4 py-2 rounded-[0.5rem] text-sm hover:bg-blue-600 hover:text-white cursor-pointer transform transition duration-500 ease-in-out delay-75">
+            <button className="mt-4 text-blue-500 uppercase font-semibold bg-white px-4 py-2 rounded-[0.5rem] text-xs hover:bg-blue-600 hover:text-white cursor-pointer transform transition duration-500 ease-in-out delay-75">
               {t("PublicHearing")}
             </button>
           </Link>
@@ -110,7 +110,7 @@ export const ImportantLinksSection: React.FC<IImportantLinksData> = ({
       <h3 className="mb-[1.5rem] text-white typography-p-large font-semibold">
         {t("ImportantLinks")}
       </h3>
-      <ul className="text-white font-medium typography-p-regular space-y-[1.25rem]">
+      <ul className="text-white font-medium typography-p-small space-y-[1.25rem]">
         {importantLinksData?.map((link, index) => (
           <div key={index}>
             <Link
@@ -134,17 +134,30 @@ export const OfficeHorus: React.FC<IOfficeData> = ({ officeData }) => {
       <h3 className="mb-[1.5rem] text-white typography-p-large font-semibold">
         {t("OfficeHours")}
       </h3>
-      <ul className=" text-white typography-p-regular ">
+      <ul className=" text-white typography-p-small w-full  ">
         {officeData?.map((item, index) => (
           <div key={index}>
-            <p className="font-semibold pb-[0.88rem]">
-              {item?.season} {item?.start_date} to {item?.end_date}
-            </p>
-            <p className="font-medium pb-[0.88rem]">{item?.days}</p>
-            <p className="pb-[1.5rem] font-semibold">
-              {formatTime(item?.opening_time)} to{" "}
-              {formatTime(item?.closing_time)}
-            </p>
+            <div>
+              <p className="font-semibold pb-[0.88rem]">
+                {item?.season} {item?.start_date} to {item?.end_date}
+              </p>
+              <div className="flex justify-between">
+                <div>
+                  <p className="font-medium pb-[0.88rem]">{item?.days}</p>
+                  <p className="pb-[1.5rem] font-semibold">
+                    {formatTime(item?.opening_time)} to{" "}
+                    {formatTime(item?.closing_time)}
+                  </p>
+                </div>
+                <div>
+                  {" "}
+                  <p className="font-medium pb-[0.88rem]">Friday</p>
+                  <p className="pb-[1.5rem] font-semibold">
+                    10:00 AM to 5:00 AM
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </ul>

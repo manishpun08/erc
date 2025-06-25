@@ -18,7 +18,7 @@ const NewsSwiper: React.FC<NewsSwiperProps> = ({ newsData }) => {
         {newsData.map((item, index) => (
           <div
             key={index}
-            className="text-white px-5 cursor-pointer text-xs md:text-base"
+            className="text-white px-5 cursor-pointer typography-p-regular"
           >
             <Link
               href={`/news/${item?.slug}`}
