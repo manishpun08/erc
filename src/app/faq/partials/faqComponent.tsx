@@ -17,7 +17,7 @@ export default function Accordion({ items }: AccordionProps) {
   return (
     <>
       <h3 className="text-black typography-h3 leading-[150%] font-semibold pb-4">
-        {` FAQ'S`}
+        FAQ
       </h3>
 
       <div className="w-full lg:w-2xl mx-auto space-y-4">

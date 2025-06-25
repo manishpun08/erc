@@ -237,7 +237,7 @@
 }
 
 @utility typography-p-regular {
-  @apply font-normal text-[0.75rem] lg:text-[1rem] leading-[150%];
+  @apply font-normal text-[0.75rem] lg:text-[0.87rem] leading-[150%];
 }
 @utility typography-p-regular-bold {
   @apply font-bold text-[1rem] leading-[120%];

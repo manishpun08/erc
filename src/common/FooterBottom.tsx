@@ -41,11 +41,11 @@ const FooterBottom: React.FC<IProps> = ({ footerData }) => {
         <div className="border-b-[0.0375rem] border-blue-50 mb-[1.88rem]" />
 
         <div className="flex justify-between pb-[1.87rem] gap-10">
-          <div className="flex gap-[1.25rem] typography-p-regular font-semibold text-white">
+          <div className="flex gap-[1.25rem] typography-p-small font-semibold text-white">
             <p>{t("Copyright")}</p>
           </div>
-          <div className="flex gap-2 lg:gap-[1.25rem] typography-p-regular z-10 font-semibold text-white">
-            <Link href={PATH.faq}>{`Faq's`}</Link>
+          <div className="flex gap-2 lg:gap-[1.25rem] typography-p-small z-10 font-semibold text-white">
+            <Link href={PATH.faq}>FAQ</Link>
             <Link href="/terms-condition">{t("Terms")}</Link>
             <Link href="/privacy-policy">{t("Privacy")}</Link>
           </div>

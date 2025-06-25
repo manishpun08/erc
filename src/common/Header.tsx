@@ -59,7 +59,7 @@ const Header = async () => {
               <div className="text-white">
                 <div className="text-lg sm:text-xl notranslate md:text-[1.85125rem] font-semibold leading-[150%] tracking-tight">
                   {/* {headerData?.organization_name} */}
-                  विधुत नियमन आयोग
+                  विद्युत नियमन आयोग
                 </div>
                 <div className="text-lg  notranslate  font-semibold leading-[150%] tracking-tight">
                   {/* {headerData?.organization_name} */}

@@ -41,7 +41,7 @@ const Footer: React.FC = async () => {
             <div className="text-white">
               <div className="text-lg  notranslate  font-semibold leading-[150%] tracking-tight">
                 {/* {headerData?.organization_name} */}
-                विधुत नियमन आयोग
+                विद्युत नियमन आयोग
               </div>
               <div className="text-xs  notranslate  font-semibold leading-[150%] tracking-tight">
                 {/* {headerData?.organization_name} */}
