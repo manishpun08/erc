@@ -153,7 +153,7 @@ export const OfficeHorus: React.FC<IOfficeData> = ({ officeData }) => {
                   {" "}
                   <p className="font-medium pb-[0.88rem]">Friday</p>
                   <p className="pb-[1.5rem] font-semibold">
-                    10:00 AM to 5:00 AM
+                    10:00 AM to 3:00 PM
                   </p>
                 </div>
               </div>
