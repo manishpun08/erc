@@ -2,14 +2,19 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { usePostDataMutation } from "@/api/api";
+import { endpoints } from "@/api/endpoints";
+import { ApiResponse, handleErrors } from "@/helper/error.helper";
+import { showSuccessMessage } from "@/utils/toast";
 
 const PublicHearingForm: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
+  const [postPublicHearing, { isLoading: isLoadingPublicHearing }] =
+    usePostDataMutation();
   const formik = useFormik({
     initialValues: {
-      hearing_date: "",
-      hearing_time: "",
+      public_hearing_date: "",
+      hearing_timing: "",
       first_name: "",
       last_name: "",
       mobile_number: "",
@@ -19,8 +24,10 @@ const PublicHearingForm: React.FC = () => {
       make_oral_submission: false,
     },
     validationSchema: Yup.object({
-      hearing_date: Yup.string().required("Public hearing date is required"),
-      hearing_time: Yup.string().required("Hearing time is required"),
+      public_hearing_date: Yup.string().required(
+        "Public hearing date is required"
+      ),
+      hearing_timing: Yup.string().required("Hearing time is required"),
       first_name: Yup.string().required("First name is required"),
       last_name: Yup.string().required("Last name is required"),
       mobile_number: Yup.string()
@@ -37,7 +44,18 @@ const PublicHearingForm: React.FC = () => {
       setIsLoading(true);
       try {
         // console.log("Submission result:", values);
-
+        const response = (await postPublicHearing({
+          url: endpoints.publicHearing,
+          data: values,
+        })) as ApiResponse;
+        if (response.data?.status === "success") {
+          showSuccessMessage(response.data.message);
+        }
+        if (response.error) {
+          console.error("Submission error:", response.error);
+          handleErrors(response as ApiResponse, formik.setErrors);
+          return;
+        }
         resetForm();
       } catch (error) {
         console.error("Submission error:", error);
@@ -46,7 +64,15 @@ const PublicHearingForm: React.FC = () => {
       }
     },
   });
-
+  const roles = [
+    { label: "--Select--", value: "" },
+    { label: "Advocate", value: "Advocate" },
+    { label: "Individual", value: "Individual" },
+    {
+      label: "Organization Representative",
+      value: "Organization Representative",
+    },
+  ];
   return (
     <div>
       <h3 className="text-2xl text-black font-semibold leading-[150%] pb-5 lg:pb-10">
@@ -66,81 +92,86 @@ const PublicHearingForm: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label
-                htmlFor="hearing_date"
+                htmlFor="public_hearing_date"
                 className="block mb-2 font-medium text-gray-700"
               >
                 Public Hearing Date <span className="text-red-500">*</span>
               </label>
               <input
-                id="hearing_date"
-                name="hearing_date"
+                id="public_hearing_date"
+                name="public_hearing_date"
                 type="date"
-                value={formik.values.hearing_date}
+                value={formik.values.public_hearing_date}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 className={`w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  formik.touched.hearing_date && formik.errors.hearing_date
+                  formik.touched.public_hearing_date &&
+                  formik.errors.public_hearing_date
                     ? "border-red-500"
                     : "border-gray-300"
                 }`}
                 aria-invalid={
-                  formik.touched.hearing_date && formik.errors.hearing_date
+                  formik.touched.public_hearing_date &&
+                  formik.errors.public_hearing_date
                     ? "true"
                     : "false"
                 }
                 aria-describedby={
-                  formik.touched.hearing_date && formik.errors.hearing_date
-                    ? "hearing_date-error"
+                  formik.touched.public_hearing_date &&
+                  formik.errors.public_hearing_date
+                    ? "public_hearing_date-error"
                     : undefined
                 }
               />
-              {formik.touched.hearing_date && formik.errors.hearing_date && (
-                <p
-                  id="hearing_date-error"
-                  className="text-red-500 text-sm mt-1"
-                >
-                  {formik.errors.hearing_date}
-                </p>
-              )}
+              {formik.touched.public_hearing_date &&
+                formik.errors.public_hearing_date && (
+                  <p
+                    id="public_hearing_date-error"
+                    className="text-red-500 text-sm mt-1"
+                  >
+                    {formik.errors.public_hearing_date}
+                  </p>
+                )}
             </div>
             <div>
               <label
-                htmlFor="hearing_time"
+                htmlFor="hearing_timing"
                 className="block mb-2 font-medium text-gray-700"
               >
                 Hearing Time
               </label>
               <input
-                id="hearing_time"
-                name="hearing_time"
+                id="hearing_timing"
+                name="hearing_timing"
                 type="time"
-                value={formik.values.hearing_time}
+                value={formik.values.hearing_timing}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 className={`w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  formik.touched.hearing_time && formik.errors.hearing_time
+                  formik.touched.hearing_timing && formik.errors.hearing_timing
                     ? "border-red-500"
                     : "border-gray-300"
                 }`}
                 aria-invalid={
-                  formik.touched.hearing_time && formik.errors.hearing_time
+                  formik.touched.hearing_timing && formik.errors.hearing_timing
                     ? "true"
                     : "false"
                 }
                 aria-describedby={
-                  formik.touched.hearing_time && formik.errors.hearing_time
-                    ? "hearing_time-error"
+                  formik.touched.hearing_timing && formik.errors.hearing_timing
+                    ? "hearing_timing-error"
                     : undefined
                 }
               />
-              {formik.touched.hearing_time && formik.errors.hearing_time && (
-                <p
-                  id="hearing_time-error"
-                  className="text-red-500 text-sm mt-1"
-                >
-                  {formik.errors.hearing_time}
-                </p>
-              )}
+              {formik.touched.hearing_timing &&
+                formik.errors.hearing_timing && (
+                  <p
+                    id="hearing_timing-error"
+                    className="text-red-500 text-sm mt-1"
+                  >
+                    {formik.errors.hearing_timing}
+                  </p>
+                )}
             </div>
           </div>
         </div>
@@ -338,11 +369,11 @@ const PublicHearingForm: React.FC = () => {
                     : undefined
                 }
               >
-                <option value="">-Select-</option>
-                <option value="individual">Individual</option>
-                <option value="organization">Organization</option>
-                <option value="government">Government</option>
-                <option value="other">Other</option>
+                {roles.map((role) => (
+                  <option key={role.value} value={role.value}>
+                    {role.label}
+                  </option>
+                ))}
               </select>
               {formik.touched.user_type && formik.errors.user_type && (
                 <p id="user_type-error" className="text-red-500 text-sm mt-1">
@@ -396,7 +427,7 @@ const PublicHearingForm: React.FC = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="px-7 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition duration-300 disabled:bg-blue-300 disabled:cursor-not-allowed"
+            className="px-7 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition duration-300 disabled:bg-blue-300 disabled:cursor-not-allowed cursor-pointer"
           >
             {isLoading ? "Submitting..." : "Submit"}
           </button>
@@ -404,7 +435,7 @@ const PublicHearingForm: React.FC = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="px-7 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition duration-300 disabled:bg-blue-300 disabled:cursor-not-allowed"
+            className="px-7 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition duration-300 disabled:bg-blue-300 disabled:cursor-not-allowed cursor-pointer"
           >
             {isLoading ? "Resting..." : "Reset"}
           </button>
@@ -412,7 +443,7 @@ const PublicHearingForm: React.FC = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="px-7 py-3 rounded-lg border border-blue-500 text-blue-500  transition duration-300 disabled:bg-blue-300 disabled:cursor-not-allowed"
+            className="px-7 py-3 rounded-lg border border-blue-500 text-blue-500  transition duration-300 disabled:bg-blue-300 disabled:cursor-not-allowed cursor-pointer"
           >
             {isLoading ? "Canceling..." : "Cancel"}
           </button>

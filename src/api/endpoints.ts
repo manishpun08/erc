@@ -33,7 +33,7 @@ interface Endpoints {
   createComplain: string;
 
   serviceDetail: string;
-
+  publicHearing: string;
   chatbot: {
     register: string;
     chatCategory: string;
@@ -90,7 +90,7 @@ export const endpoints: Endpoints = {
 
   eFilingData: "/efiling/list/",
   createComplain: "/complain/create/",
-
+  publicHearing: "/publichearing/create/",
   // Chatbot
   chatbot: {
     register: "/user/register/?lang=np",
