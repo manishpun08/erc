@@ -9,8 +9,7 @@ import { showSuccessMessage } from "@/utils/toast";
 
 const PublicHearingForm: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [postPublicHearing, { isLoading: isLoadingPublicHearing }] =
-    usePostDataMutation();
+  const [postPublicHearing] = usePostDataMutation();
   const formik = useFormik({
     initialValues: {
       public_hearing_date: "",
