@@ -13,7 +13,6 @@ interface Props {
 const DesktopNavbar: React.FC<Props> = ({ sortedLinks }) => {
   const t = useTranslations("nav");
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
   const renderNavItems = (
     navItems: INavLinksCategory[],
     shouldTranslate: boolean = false
