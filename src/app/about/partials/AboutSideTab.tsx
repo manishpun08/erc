@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl";
 import Introduction from "./Introduction";
 import MissionVision from "./MissionVission";
 import FunctionDuties from "./FunctionDuties";
-import ReportOverview from "./ReportOverview";
 import OrganizationStructure from "./OrganizationStructure";
 import CeoMessage from "./CeoMessage";
 import EmployeeDetail from "./EmployeeDetail";

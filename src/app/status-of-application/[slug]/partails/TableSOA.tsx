@@ -10,8 +10,6 @@ interface TableSOAProps {
 }
 
 const TableSOA = ({ slug }: TableSOAProps) => {
-  const t = useTranslations("ComplaintStatus");
-
   const { data } = useGetDataQuery({
     url: endpoints.soaDetail + `/${slug}/`,
     params: {

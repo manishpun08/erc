@@ -11,8 +11,7 @@ import { endpoints } from "@/api/endpoints";
 import { ISeoRoot } from "@/Interface/seo.interface";
 import { createMetadata } from "@/utils/generateMetaData";
 import ServiceLatestNotices from "./partials/LatestNotices";
-import EmployeeCard from "@/components/card/EmployeeCard";
-import EmployeeDetail from "../about/partials/EmployeeDetail";
+
 import SupportTeam from "./partials/SupportTeam";
 
 export async function generateMetadata() {
