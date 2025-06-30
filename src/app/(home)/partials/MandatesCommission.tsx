@@ -1,15 +1,15 @@
 "use client";
 import React, { useRef, useState } from "react";
-import { IMissionVisionGoalsObjec } from "../interface/homeMissionVision.interface";
 import ObjectiveCard from "@/components/ObjectiveCard";
 import { useTranslations } from "next-intl";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
+import { IAboutGoalsObjec } from "@/app/about/interface/employee.interface";
 
 interface Props {
-  mandatesData: IMissionVisionGoalsObjec[];
+  mandatesData: IAboutGoalsObjec[];
 }
 
 const MandatesCommission: React.FC<Props> = ({ mandatesData }) => {

@@ -1,9 +1,9 @@
+import { IAboutMissionVision } from "@/app/about/interface/employee.interface";
 import Image from "next/image";
 import React from "react";
-import { IMissionVisionMissionVision } from "../interface/homeMissionVision.interface";
 
 interface Props {
-  missionVisionData: IMissionVisionMissionVision[];
+  missionVisionData: IAboutMissionVision[];
 }
 
 const MissionVision: React.FC<Props> = ({ missionVisionData }) => {

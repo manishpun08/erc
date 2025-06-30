@@ -35,25 +35,25 @@ const EmployeeCard: React.FC<Props> = ({ team }) => {
               style={{
                 wordBreak: "break-all",
               }}
-              className="text-xs lg:typography-regular text-text-500 font-medium flex  text-wrap lg:gap-[0.28rem] cursor-pointer"
+              className=" my-2 text-xs lg:typography-p-regular text-text-500 font-medium flex  text-wrap lg:gap-4 cursor-pointer"
             >
               <div className="mt-1">
                 <CiMail />
               </div>
               {team?.email}
             </Link>
-            {team?.phone && (
+            {team?.phone_no && (
               <Link
-                href={` tel:${team?.phone}`}
+                href={` tel:${team?.phone_no}`}
                 style={{
                   wordBreak: "break-all",
                 }}
-                className="text-xs lg:typography-regular text-text-500 font-medium flex  text-wrap lg:gap-[0.28rem] cursor-pointer"
+                className="text-xs lg:typography-p-regular text-text-500 font-medium flex  text-wrap lg:gap-4 cursor-pointer "
               >
                 <div className="mt-1">
                   <FaPhone />
                 </div>
-                {team?.phone}
+                {team?.phone_no}
               </Link>
             )}
           </div>

@@ -1,11 +1,14 @@
 import { useGetDataQuery } from "@/api/api";
 import { endpoints } from "@/api/endpoints";
 import ErrorMessage from "@/components/ErrorMessage";
-import { IEmployeeDetail } from "../interface/employee.interface";
+import { IAboutRoot, IEmployeeDetail } from "../interface/employee.interface";
 import EmployeeCard from "@/components/card/EmployeeCard";
 
 const EmployeeDetail = () => {
-  const { data, error } = useGetDataQuery({
+  const { data, error } = useGetDataQuery<{
+    data: IAboutRoot;
+    error: string;
+  }>({
     url: endpoints.about,
   });
 
@@ -14,8 +17,7 @@ const EmployeeDetail = () => {
     return <ErrorMessage errorMessage="employee data" />;
   }
 
-  const aboutEmployeeDetail: IEmployeeDetail[] =
-    data?.data[0]?.employee_details;
+  const aboutEmployeeDetail: IEmployeeDetail[] = data?.data?.employee_details;
 
   return (
     <>

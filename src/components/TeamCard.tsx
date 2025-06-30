@@ -60,7 +60,7 @@ const TeamCard = ({
                 {t("viewProfile")}
               </Link>
               <Link
-                href={`${PATH.ABOUT}?tab=6`}
+                href={`${PATH.ABOUT}?tab=ChairpersonMessage`}
                 className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded cursor-pointer justify-self-end w-1/2"
               >
                 {t("message")}

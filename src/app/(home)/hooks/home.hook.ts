@@ -1,6 +1,8 @@
 import { endpoints } from "@/api/endpoints";
 import { getData } from "@/api/fetch";
+import { IAboutRoot } from "@/app/about/interface/employee.interface";
 import { safeFetch } from "@/helper/safeFetch";
+import { ICommissionRoots } from "@/Interface/comission.interface";
 
 export const getHomePageData = async () => {
   const homeData = await safeFetch(endpoints.homeHero);
@@ -9,10 +11,14 @@ export const getHomePageData = async () => {
     is_important: "true",
   });
 
-  const missionVisionData = await safeFetch(endpoints.about);
+  const missionVisionData = await safeFetch<IAboutRoot>(endpoints.about);
   const serviceData = await getData(endpoints.serviceData);
-  const teamData = await safeFetch(endpoints.homeTeam);
-  const chairperson = await safeFetch(endpoints.chairperson);
+  const teamData = await getData(endpoints.homeTeam, {
+    is_former_member: "true",
+  });
+  const chairperson = await getData<ICommissionRoots>(endpoints.homeTeam, {
+    is_chairperson: "true",
+  });
 
   return {
     homeData,

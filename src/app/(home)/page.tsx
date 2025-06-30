@@ -14,20 +14,20 @@ import ServiceLatestNotices from "./partials/LatestNotices";
 
 import SupportTeam from "./partials/SupportTeam";
 
-export async function generateMetadata() {
-  try {
-    const { data } = await getData<ISeoRoot>(endpoints.seo, {
-      seo_for: "homepage",
-    });
+// export async function generateMetadata() {
+//   try {
+//     const { data } = await getData<ISeoRoot>(endpoints.seo, {
+//       seo_for: "homepage",
+//     });
 
-    const meta = createMetadata(data);
+//     const meta = createMetadata(data);
 
-    return meta;
-  } catch (error) {
-    console.error(error, "Error fetching seo home data");
-    return <ErrorMessage errorMessage="seo home data" />;
-  }
-}
+//     return meta;
+//   } catch (error) {
+//     console.error(error, "Error fetching seo home data");
+//     return <ErrorMessage errorMessage="seo home data" />;
+//   }
+// }
 
 const Home = async () => {
   try {
@@ -39,21 +39,20 @@ const Home = async () => {
       teamData,
       chairperson,
     } = await getHomePageData();
-
     return (
       <div className="mb-10">
         <Hero heroData={homeData?.data[0]} />
         <ImpServices impServiceData={impServiceData?.data} />
         <MissionVision
-          missionVisionData={missionVisionData?.data[0]?.mission_vision}
+          missionVisionData={missionVisionData?.data?.mission_vision || []}
         />
         <ServiceLatestNotices serviceData={serviceData?.data} />
         <TeamSection
           teamData={teamData?.data?.records}
-          chairperson={chairperson}
+          chairperson={chairperson?.data?.records[0]}
         />
         <MandatesCommission
-          mandatesData={missionVisionData?.data?.[0]?.goals_objectives}
+          mandatesData={missionVisionData?.data?.goals_objectives || []}
         />
         <SupportTeam />{" "}
         {/* <TeamBottom teamData={teamData?.data?.records} /> */}

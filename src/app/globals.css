@@ -263,11 +263,11 @@
 }
 
 @utility padding-x {
-  @apply px-[1rem] sm:px-[5rem];
+  @apply px-[1rem] sm:px-[2rem] lg:px-[5rem];
 }
 
 @utility padding-y {
-  @apply py-4 sm:py-10;
+  @apply py-4 lg:py-10;
 }
 
 @utility typography-p1-regular {

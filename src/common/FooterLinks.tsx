@@ -24,7 +24,7 @@ interface IOfficeData {
 }
 
 interface IImportantLinksData {
-  importantLinksData: IImportantLinks[];
+  importantLinksData: IImportantLinks;
 }
 
 export const Company: React.FC<ICompany> = ({ footerData }) => {
@@ -111,7 +111,7 @@ export const ImportantLinksSection: React.FC<IImportantLinksData> = ({
         {t("ImportantLinks")}
       </h3>
       <ul className="text-white font-medium typography-p-small space-y-[1.25rem]">
-        {importantLinksData?.map((link, index) => (
+        {importantLinksData?.data?.records?.map((link, index) => (
           <div key={index}>
             <Link
               href={link?.url}
