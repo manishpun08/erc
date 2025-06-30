@@ -55,6 +55,6 @@ export interface IAboutEmployeeDetail {
   name: string;
   designation: string;
   image: any;
-  phone_no: string;
+  phone_no?: number;
   email: string;
 }
