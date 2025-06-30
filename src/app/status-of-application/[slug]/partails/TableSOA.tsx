@@ -3,7 +3,6 @@ import { useGetDataQuery } from "@/api/api";
 import { endpoints } from "@/api/endpoints";
 import TableData from "./Table";
 import SoaBreadcrumb from "./SoaBreadcrumb";
-import { useTranslations } from "next-intl";
 
 interface TableSOAProps {
   slug: string;
