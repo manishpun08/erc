@@ -10,7 +10,7 @@ export const navLinks = [
     dropdown: [
       { name: "introduction", url: "/about?tab=Introduction" },
       { name: "vision_mission", url: "/about?tab=VisionAndMission" },
-      { name: "ReportOverview", url: "/about?tab=ReportOverview" },
+      // { name: "ReportOverview", url: "/about?tab=ReportOverview" },
       { name: "function_duties", url: "/about?tab=FunctionsDuties" },
       { name: "commission", url: "/about?tab=Commission" },
       {

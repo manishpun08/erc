@@ -19,7 +19,7 @@ const MandatesCommission: React.FC<Props> = ({ mandatesData }) => {
 
   const goToSlide = (index: number) => {
     if (swiperRef.current) {
-      swiperRef.current.slideToLoop(index); // loop mode safe
+      swiperRef.current.slideToLoop(index);
     }
   };
 

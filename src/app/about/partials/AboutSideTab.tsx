@@ -22,11 +22,11 @@ export const useAboutSidebar = () => {
       key: "VisionAndMission",
       content: <MissionVision />,
     },
-    {
-      name: t("ReportOverview"),
-      key: "ReportOverview",
-      content: <ReportOverview />,
-    },
+    // {
+    //   name: t("ReportOverview"),
+    //   key: "ReportOverview",
+    //   content: <ReportOverview />,
+    // },
     {
       name: t("FunctionsDuties"),
       key: "FunctionsDuties",

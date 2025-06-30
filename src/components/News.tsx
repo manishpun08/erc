@@ -14,8 +14,8 @@ const News = () => {
         className="py-3 px-4 sm:px-6 md:py-4 md:pr-[6.9375rem] md:pl-[5rem] "
       >
         <div className="flex items-center gap-2 md:gap-0 ">
-          <div className="flex font-semibold text-white ">
-            {t("News")} <span className="px-1">|</span>
+          <div className="flex font-semibold text-white  border-r-2 pr-2 border-white mr-2">
+            {t("News")}
           </div>
           <NewsCarousel />
         </div>

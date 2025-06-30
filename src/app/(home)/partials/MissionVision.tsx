@@ -8,8 +8,8 @@ interface Props {
 
 const MissionVision: React.FC<Props> = ({ missionVisionData }) => {
   return (
-    <div className="bg-background-100 rounded-[0.25rem] mb-[1.5rem] lg:mb-[2.5rem]">
-      <div className="p-[1rem] lg:p-[5rem] flex flex-col lg:flex-row gap-[2.5rem]  items-center">
+    <div className=" bg-background-100 rounded-[0.25rem] mb-[1.5rem] lg:mb-[2.5rem]">
+      <div className="padding-x padding-y flex flex-col lg:flex-row gap-[2.5rem]  items-center">
         <div className="lg:w-3xl lg:h-[25rem]">
           <Image
             src={missionVisionData?.[1]?.image}

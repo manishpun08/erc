@@ -11,6 +11,9 @@ import { endpoints } from "@/api/endpoints";
 import { ISeoRoot } from "@/Interface/seo.interface";
 import { createMetadata } from "@/utils/generateMetaData";
 import ServiceLatestNotices from "./partials/LatestNotices";
+import EmployeeCard from "@/components/card/EmployeeCard";
+import EmployeeDetail from "../about/partials/EmployeeDetail";
+import SupportTeam from "./partials/SupportTeam";
 
 export async function generateMetadata() {
   try {
@@ -39,23 +42,21 @@ const Home = async () => {
     } = await getHomePageData();
 
     return (
-      <div>
+      <div className="mb-10">
         <Hero heroData={homeData?.data[0]} />
         <ImpServices impServiceData={impServiceData?.data} />
         <MissionVision
           missionVisionData={missionVisionData?.data[0]?.mission_vision}
         />
         <ServiceLatestNotices serviceData={serviceData?.data} />
-
         <TeamSection
           teamData={teamData?.data?.records}
           chairperson={chairperson}
         />
-
         <MandatesCommission
           mandatesData={missionVisionData?.data?.[0]?.goals_objectives}
         />
-
+        <SupportTeam />{" "}
         {/* <TeamBottom teamData={teamData?.data?.records} /> */}
       </div>
     );
