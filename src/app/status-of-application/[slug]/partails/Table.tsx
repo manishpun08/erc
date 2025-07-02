@@ -38,7 +38,6 @@ const columns: Column[] = [
   { key: "dateOfApplication", label: "Date of application" },
   { key: "dateOfCommissionDecision", label: " Date of Commission Decision" },
   { key: "status", label: "Status" },
-  { key: "remarks", label: "Remarks" },
 ];
 
 const PER_PAGE = 4;
@@ -116,9 +115,6 @@ const TableData: React.FC<Props> = ({ soaTableData }) => {
 
                   <TableCell className="cellStyle p-4">
                     <div>{member?.status}</div>
-                  </TableCell>
-                  <TableCell className="cellStyle p-4">
-                    {member?.remarks}
                   </TableCell>
                 </TableRow>
               ))

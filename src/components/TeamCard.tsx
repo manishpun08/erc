@@ -25,7 +25,7 @@ const TeamCard = ({
   return (
     <div className="w-full  group  flex flex-col bg-background-100 border-2 border-background-100 rounded-[0.5rem]">
       {/* Image */}
-      <div className=" aspect-[260/290] overflow-hidden cursor-pointer w-full rounded-t-[0.5rem]">
+      <div className=" aspect-[250/240] overflow-hidden cursor-pointer w-full rounded-t-[0.5rem]">
         <Image
           src={image}
           alt={name}
@@ -60,7 +60,7 @@ const TeamCard = ({
                 {t("viewProfile")}
               </Link>
               <Link
-                href={`${PATH.ABOUT}?tab=6`}
+                href={`${PATH.ABOUT}?tab=ChairpersonMessage`}
                 className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded cursor-pointer justify-self-end w-1/2"
               >
                 {t("message")}

@@ -3,6 +3,7 @@ import { endpoints } from "@/api/endpoints";
 import ErrorMessage from "@/components/ErrorMessage";
 import Image from "next/image";
 import React from "react";
+import { IAboutRoot } from "../interface/employee.interface";
 
 interface IorgazizationData {
   title: string;
@@ -11,7 +12,10 @@ interface IorgazizationData {
 }
 
 const OrganizationStructure = () => {
-  const { data, error } = useGetDataQuery({
+  const { data, error } = useGetDataQuery<{
+    data: IAboutRoot;
+    error: string;
+  }>({
     url: endpoints.about,
   });
 
@@ -21,7 +25,7 @@ const OrganizationStructure = () => {
   }
 
   const organizationData: IorgazizationData =
-    data?.data[0]?.organizational_structure[0];
+    data?.data?.organizational_structure[0];
 
   return (
     <div className="w-full aspect-[1353.57/962.00]">

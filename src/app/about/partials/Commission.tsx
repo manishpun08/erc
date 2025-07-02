@@ -1,23 +1,21 @@
-import { useGetDataQuery } from "@/api/api";
-import { endpoints } from "@/api/endpoints";
 import ErrorMessage from "@/components/ErrorMessage";
 import TeamCard from "@/components/TeamCard";
-import { ITeamRecord } from "@/Interface/team.interface";
+
+import { useCommission } from "../hooks/useCommission";
 
 const Commission = () => {
-  const { data, error } = useGetDataQuery({
-    url: endpoints.homeTeam,
-  });
-  const { data: chairpersonData, error: chairpersonError } = useGetDataQuery({
-    url: endpoints.chairperson,
-  });
-
+  const {
+    aboutCommission,
+    error,
+    handleFilter,
+    isFormerMember,
+    chairpersonData,
+    chairpersonError,
+  } = useCommission();
   if (error || chairpersonError) {
     console.error("Failed to load commission data:", error);
     return <ErrorMessage errorMessage="commission data" />;
   }
-
-  const aboutCommission: ITeamRecord[] = data?.data?.records;
 
   return (
     <div>
@@ -39,6 +37,22 @@ const Commission = () => {
             id={team?.slug}
           />
         ))}
+      </div>
+      <div className="flex justify-between gap-4 my-10 items-center w-full">
+        <button
+          disabled={!isFormerMember}
+          onClick={() => handleFilter(false)}
+          className={` text-white uppercase font-semibold typography-p-regular px-4 py-2 rounded-[0.5rem] cursor-pointer ${isFormerMember ? "bg-blue-500 cursor-pointer" : "bg-blue-500/50 cursor-not-allowed "} `}
+        >
+          Current Member
+        </button>
+        <button
+          disabled={isFormerMember}
+          onClick={() => handleFilter(true)}
+          className={` text-white uppercase font-semibold typography-p-regular px-4 py-2 rounded-[0.5rem] cursor-pointer ${!isFormerMember ? "bg-blue-500 cursor-pointer" : "bg-blue-500/50 cursor-not-allowed"} `}
+        >
+          Former Member
+        </button>
       </div>
     </div>
   );

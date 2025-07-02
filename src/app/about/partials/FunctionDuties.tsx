@@ -2,14 +2,13 @@ import { useGetDataQuery } from "@/api/api";
 import { endpoints } from "@/api/endpoints";
 import ErrorMessage from "@/components/ErrorMessage";
 import React from "react";
-
-interface IFunctionDuties {
-  title: string;
-  description: string;
-}
+import { IAboutRoot } from "../interface/employee.interface";
 
 const FunctionDuties = () => {
-  const { data, error } = useGetDataQuery({
+  const { data, error } = useGetDataQuery<{
+    data: IAboutRoot;
+    error: string;
+  }>({
     url: endpoints.about,
   });
 
@@ -18,8 +17,7 @@ const FunctionDuties = () => {
     return <ErrorMessage errorMessage="function and duties data" />;
   }
 
-  const aboutDutiesFunction: IFunctionDuties =
-    data?.data[0]?.function_duties_authorities[0];
+  const aboutDutiesFunction = data?.data?.function_duties_authorities[0];
 
   return (
     <div className=" bg-background-400 ">

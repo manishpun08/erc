@@ -32,7 +32,7 @@ const AboutPage = () => {
               <button
                 key={section?.key}
                 onClick={() => handleCategoryClick(idx)}
-                className={`py-3 px-4 text-left rounded-md transition-colors ${
+                className={`py-3 px-4 text-left cursor-pointer rounded-md transition-colors ${
                   selectedSectionIndex === idx
                     ? "bg-blue-300 text-white"
                     : "bg-white hover:bg-blue-100"

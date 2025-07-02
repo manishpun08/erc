@@ -33,7 +33,7 @@ interface Endpoints {
   createComplain: string;
 
   serviceDetail: string;
-
+  publicHearing: string;
   chatbot: {
     register: string;
     chatCategory: string;
@@ -57,15 +57,15 @@ export const endpoints: Endpoints = {
   navNews: "/news/list/",
   popup: "/popup/list/",
 
-  homeHero: "/homepage/list/",
+  homeHero: "/homepage/",
 
-  serviceData: "/services/list",
+  serviceData: "/services/list/",
 
-  about: "/about/list/",
+  about: "/about/",
   serviceDetail: "/services/detail/",
-  homeTeam: "/team/list/",
+  homeTeam: "/commission/list/",
   teamDetail: "/team/detail/",
-  chairperson: "/team/chairperson-message/list/",
+  chairperson: "/commission/list/",
   document: "/document/list/",
 
   subcategory: "/maincategory/detail/",
@@ -90,7 +90,7 @@ export const endpoints: Endpoints = {
 
   eFilingData: "/efiling/list/",
   createComplain: "/complain/create/",
-
+  publicHearing: "/publichearing/create/",
   // Chatbot
   chatbot: {
     register: "/user/register/?lang=np",

@@ -3,16 +3,13 @@ import { endpoints } from "@/api/endpoints";
 import ErrorMessage from "@/components/ErrorMessage";
 import Image from "next/image";
 import React from "react";
-
-interface ICeoMessage {
-  name: string;
-  designation: string;
-  image: string;
-  message: string;
-}
+import { ICommissionRoots } from "@/Interface/comission.interface";
 
 const CeoMessage = () => {
-  const { data, error } = useGetDataQuery({
+  const { data, error } = useGetDataQuery<{
+    data: ICommissionRoots;
+    error: string;
+  }>({
     url: endpoints.chairperson,
   });
 
@@ -21,7 +18,7 @@ const CeoMessage = () => {
     return <ErrorMessage errorMessage="Chairperson message data" />;
   }
 
-  const ceoMessage: ICeoMessage = data;
+  const ceoMessage = data?.data?.records[0];
 
   return (
     <>
@@ -30,7 +27,7 @@ const CeoMessage = () => {
         <p
           className="text-text-400 typography-p1-regular text-justify"
           dangerouslySetInnerHTML={{
-            __html: ceoMessage?.message || "",
+            __html: ceoMessage?.chairperson_message?.description || "",
           }}
         />
 

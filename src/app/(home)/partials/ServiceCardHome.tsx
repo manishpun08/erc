@@ -22,7 +22,7 @@ const ServiceCardHome: React.FC<IService> = ({ slug, icon, name }) => {
 
           {/* Content */}
           <div className="relative z-20 flex flex-col items-center justify-center">
-            <div className="w-20 h-20 lg:w-[4rem] lg:h-[4rem] ">
+            <div className="w-10 h-10 lg:w-[4rem] lg:h-[4rem] ">
               <Image
                 src={icon}
                 alt="Service Icon"

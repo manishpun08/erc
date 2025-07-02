@@ -1,13 +1,12 @@
 import connector from "@/assets/home/linee.png";
-import { IChairperson } from "@/Interface/chairperson.interface";
 import Image from "next/image";
 import React from "react";
-import { ITeamRecord } from "../Interface/team.interface";
 import TeamCard from "./TeamCard";
+import { ICommissionRecord } from "@/Interface/comission.interface";
 
 interface Props {
-  teamData: ITeamRecord[];
-  chairperson: IChairperson;
+  teamData: ICommissionRecord[];
+  chairperson: ICommissionRecord;
 }
 
 const TeamSection: React.FC<Props> = ({ teamData, chairperson }) => {

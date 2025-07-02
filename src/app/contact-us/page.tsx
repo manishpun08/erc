@@ -3,10 +3,12 @@ import ErrorMessage from "@/components/ErrorMessage";
 import { getOrganizationSettingData } from "@/hooks/globalHook";
 import GetInTouch from "./partials/GetInTouch";
 import Location from "./partials/Location";
+import { IOrganizationSettingRoot } from "@/Interface/organization.interface";
 
 const ContactUs = async () => {
   try {
-    const organizationSettingData = await getOrganizationSettingData();
+    const organizationSettingData =
+      (await getOrganizationSettingData()) as IOrganizationSettingRoot;
 
     return (
       <div className="padding-x bg-background-400 ">

@@ -13,7 +13,6 @@ const ServiceDetailPage = async ({ params }: ServiceSlug) => {
     const { slug } = await params;
 
     const serviceDetail = await getData(endpoints.serviceDetail + `${slug}`);
-
     return (
       <div>
         {serviceDetail?.data?.files.length > 0 ? (

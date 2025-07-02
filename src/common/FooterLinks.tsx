@@ -24,7 +24,7 @@ interface IOfficeData {
 }
 
 interface IImportantLinksData {
-  importantLinksData: IImportantLinks[];
+  importantLinksData: IImportantLinks;
 }
 
 export const Company: React.FC<ICompany> = ({ footerData }) => {
@@ -104,14 +104,14 @@ export const ImportantLinksSection: React.FC<IImportantLinksData> = ({
   importantLinksData,
 }) => {
   const t = useTranslations("FooterLinks");
-
   return (
     <div>
       <h3 className="mb-[1.5rem] text-white typography-p-large font-semibold">
         {t("ImportantLinks")}
       </h3>
+
       <ul className="text-white font-medium typography-p-small space-y-[1.25rem]">
-        {importantLinksData?.map((link, index) => (
+        {importantLinksData?.data?.records?.map((link, index) => (
           <div key={index}>
             <Link
               href={link?.url}
@@ -153,7 +153,7 @@ export const OfficeHorus: React.FC<IOfficeData> = ({ officeData }) => {
                   {" "}
                   <p className="font-medium pb-[0.88rem]">Friday</p>
                   <p className="pb-[1.5rem] font-semibold">
-                    10:00 AM to 5:00 AM
+                    10:00 AM to 3:00 PM
                   </p>
                 </div>
               </div>

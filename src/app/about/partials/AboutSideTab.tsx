@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl";
 import Introduction from "./Introduction";
 import MissionVision from "./MissionVission";
 import FunctionDuties from "./FunctionDuties";
-import ReportOverview from "./ReportOverview";
 import OrganizationStructure from "./OrganizationStructure";
 import CeoMessage from "./CeoMessage";
 import EmployeeDetail from "./EmployeeDetail";
@@ -22,11 +21,11 @@ export const useAboutSidebar = () => {
       key: "VisionAndMission",
       content: <MissionVision />,
     },
-    {
-      name: t("ReportOverview"),
-      key: "ReportOverview",
-      content: <ReportOverview />,
-    },
+    // {
+    //   name: t("ReportOverview"),
+    //   key: "ReportOverview",
+    //   content: <ReportOverview />,
+    // },
     {
       name: t("FunctionsDuties"),
       key: "FunctionsDuties",

@@ -1,10 +1,13 @@
 import { useGetDataQuery } from "@/api/api";
 import { endpoints } from "@/api/endpoints";
-import { IMissionVisionDaum } from "@/app/(home)/interface/homeMissionVision.interface";
 import ErrorMessage from "@/components/ErrorMessage";
+import { IAboutRoot } from "../interface/employee.interface";
 
 const Introduction = () => {
-  const { data: IntroductionData, error } = useGetDataQuery({
+  const { data: IntroductionData, error } = useGetDataQuery<{
+    data: IAboutRoot;
+    error: string;
+  }>({
     url: endpoints.about,
   });
 
@@ -13,17 +16,15 @@ const Introduction = () => {
     return <ErrorMessage errorMessage="introduction data" />;
   }
 
-  const aboutIntroduction: IMissionVisionDaum = IntroductionData?.data[0];
-
   return (
     <div>
-      <p className="typography-h3-bold">{aboutIntroduction?.title}</p>
+      <p className="typography-h3-bold">{IntroductionData?.data?.title}</p>
 
       <div className="mt-3">
         <p
           className="typography-p-regular text-text-400"
           dangerouslySetInnerHTML={{
-            __html: aboutIntroduction?.description || "",
+            __html: IntroductionData?.data?.description || "",
           }}
         />
       </div>

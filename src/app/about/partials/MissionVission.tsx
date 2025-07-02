@@ -1,11 +1,14 @@
 import { useGetDataQuery } from "@/api/api";
 import { endpoints } from "@/api/endpoints";
-import { IMissionVisionMissionVision } from "@/app/(home)/interface/homeMissionVision.interface";
 import ErrorMessage from "@/components/ErrorMessage";
 import Image from "next/image";
 import React from "react";
+import {
+  IAboutMissionVision,
+  IAboutRoot,
+} from "../interface/employee.interface";
 
-const MissionVisionCard: React.FC<IMissionVisionMissionVision> = ({
+const MissionVisionCard: React.FC<IAboutMissionVision> = ({
   icon,
   title,
   description,
@@ -34,7 +37,10 @@ const MissionVisionCard: React.FC<IMissionVisionMissionVision> = ({
 );
 
 const MissionVision = () => {
-  const { data, error } = useGetDataQuery({
+  const { data, error } = useGetDataQuery<{
+    data: IAboutRoot;
+    error: string;
+  }>({
     url: endpoints.about,
   });
 
@@ -43,8 +49,7 @@ const MissionVision = () => {
     return <ErrorMessage errorMessage="mission and vision data" />;
   }
 
-  const aboutMissionVision: IMissionVisionMissionVision[] =
-    data?.data[0]?.mission_vision;
+  const aboutMissionVision = data?.data?.mission_vision || [];
 
   if (!aboutMissionVision?.length) return null;
 

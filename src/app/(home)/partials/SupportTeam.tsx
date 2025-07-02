@@ -1,7 +1,8 @@
+"use client";
 import { useGetDataQuery } from "@/api/api";
 import { endpoints } from "@/api/endpoints";
+import { IAboutRoot } from "@/app/about/interface/employee.interface";
 import ErrorMessage from "@/components/ErrorMessage";
-import { IAboutRoot, IEmployeeDetail } from "../interface/employee.interface";
 import EmployeeCard from "@/components/card/EmployeeCard";
 
 const EmployeeDetail = () => {
@@ -10,6 +11,7 @@ const EmployeeDetail = () => {
     error: string;
   }>({
     url: endpoints.about,
+    params: { is_technical_staff: "true" },
   });
 
   if (error) {
@@ -17,16 +19,17 @@ const EmployeeDetail = () => {
     return <ErrorMessage errorMessage="employee data" />;
   }
 
-  const aboutEmployeeDetail: IEmployeeDetail[] = data?.data?.employee_details;
-
   return (
-    <>
-      <div className="grid grid-cols-2 lg:grid-cols-3 mt-6 lg:mt-0 gap-4 ">
-        {aboutEmployeeDetail?.map((team, index) => (
+    <section className="padding-x padding-y">
+      <h2 className="text-text-500 font-bold typography-h3 leading-[150%] pb-[1.25rem]">
+        Support Team
+      </h2>
+      <div className="grid grid-cols-2 lg:grid-cols-4 mt-6 lg:mt-0 gap-5 ">
+        {data?.data?.employee_details?.map((team, index) => (
           <EmployeeCard key={index} team={team} />
         ))}
       </div>
-    </>
+    </section>
   );
 };
 
