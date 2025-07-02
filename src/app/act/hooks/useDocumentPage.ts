@@ -43,11 +43,18 @@ export function useDocumentPage(initialSlug: string): UseDocumentPageReturn {
   const { data: categoryDocumentData, isLoading } = useGetDataQuery({
     url: `${endpoints.categoryDetail}/${slug}/`,
   });
-
+  const { data: documentData } = useGetDataQuery({
+    url: `${endpoints.document}`,
+    params: {
+      sub_category__sub_ctg_slug: slug,
+      p: currentPage,
+      page_size: 10,
+    },
+  });
   const categoriesList =
-    categoryDocumentData?.data?.related_subcategories ?? [];
+    categoryDocumentData?.data?.subcategory?.related_subcategories ?? [];
   const subcategory = categoryDocumentData?.data?.subcategory;
-  const allDocuments = categoryDocumentData?.data?.documents.records ?? [];
+  const allDocuments = documentData?.records ?? [];
   const pageCount = Math.ceil(allDocuments.length / PER_PAGE);
   const annualReport = subcategory?.is_annual_report;
 

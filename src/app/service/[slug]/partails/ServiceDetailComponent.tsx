@@ -31,7 +31,7 @@ const ServiceDetailComponent: React.FC<Props> = ({ serviceDetail }) => {
           >
             <div>
               <Link
-                href={file?.file}
+                href={file?.file || ""}
                 title="View PDF"
                 download
                 target="_blank"
@@ -42,12 +42,12 @@ const ServiceDetailComponent: React.FC<Props> = ({ serviceDetail }) => {
               </Link>
               <p className="typography-p-small text-text-300 font-medium pt-[0.62rem]">
                 {t("PublishedDate")}:{" "}
-                {formatNepaliDate(file?.created_at || "", locale)}
+                {/* {formatNepaliDate(file?.created_at || "", locale)} */}
               </p>
             </div>
             <div className="flex items-center gap-[0.75rem]">
               <Link
-                href={file?.file}
+                href={file?.file || ""}
                 className="flex items-center justify-center w-[1.25rem] h-[1.25rem] lg:w-[2.125rem] lg:h-[2.125rem]"
                 title="Download PDF"
                 download
@@ -63,7 +63,7 @@ const ServiceDetailComponent: React.FC<Props> = ({ serviceDetail }) => {
                 />
               </Link>
               <Link
-                href={file?.file}
+                href={file?.file || ""}
                 download
                 target="_blank"
                 rel="noopener noreferrer"

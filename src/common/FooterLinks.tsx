@@ -104,12 +104,12 @@ export const ImportantLinksSection: React.FC<IImportantLinksData> = ({
   importantLinksData,
 }) => {
   const t = useTranslations("FooterLinks");
-
   return (
     <div>
       <h3 className="mb-[1.5rem] text-white typography-p-large font-semibold">
         {t("ImportantLinks")}
       </h3>
+
       <ul className="text-white font-medium typography-p-small space-y-[1.25rem]">
         {importantLinksData?.data?.records?.map((link, index) => (
           <div key={index}>

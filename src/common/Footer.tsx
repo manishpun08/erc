@@ -19,7 +19,7 @@ const Footer: React.FC = async () => {
       organizationSettingData?.data[0];
 
     const importantLinks = await getImportantLinks();
-    const importantLinksData = importantLinks?.data;
+    const importantLinksData = importantLinks;
 
     return (
       <footer className="footer-gradient padding-x pt-[2.06rem]">
