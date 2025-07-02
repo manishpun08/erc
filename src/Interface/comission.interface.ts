@@ -8,7 +8,7 @@ export interface ICommissionRecord {
   designation: string;
   email: string;
   profile: string;
-  image: any;
+  image: string;
   is_chairperson: boolean;
   is_former_chairperson: boolean;
   is_former_member: boolean;

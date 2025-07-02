@@ -42,7 +42,7 @@ const ServiceDetailComponent: React.FC<Props> = ({ serviceDetail }) => {
               </Link>
               <p className="typography-p-small text-text-300 font-medium pt-[0.62rem]">
                 {t("PublishedDate")}:{" "}
-                {/* {formatNepaliDate(file?.created_at || "", locale)} */}
+                {formatNepaliDate(file?.created_at || "", locale)}
               </p>
             </div>
             <div className="flex items-center gap-[0.75rem]">

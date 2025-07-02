@@ -3,15 +3,7 @@ import { endpoints } from "@/api/endpoints";
 import ErrorMessage from "@/components/ErrorMessage";
 import Image from "next/image";
 import React from "react";
-import { IAboutRoot } from "../interface/employee.interface";
 import { ICommissionRoots } from "@/Interface/comission.interface";
-
-interface ICeoMessage {
-  name: string;
-  designation: string;
-  image: string;
-  message: string;
-}
 
 const CeoMessage = () => {
   const { data, error } = useGetDataQuery<{

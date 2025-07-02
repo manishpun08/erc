@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getData } from "@/api/fetch";
 
 export const safeFetch = async <T = any>(endpoint: string) => {

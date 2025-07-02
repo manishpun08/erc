@@ -14,7 +14,6 @@ export interface Data<T> {
   pagingCounter: number;
   hasPrevious: boolean;
   hasNext: boolean;
-  prev: any;
-  next: any;
+
   recordShown: number;
 }

@@ -4,11 +4,6 @@ import ErrorMessage from "@/components/ErrorMessage";
 import React from "react";
 import { IAboutRoot } from "../interface/employee.interface";
 
-interface IFunctionDuties {
-  title: string;
-  description: string;
-}
-
 const FunctionDuties = () => {
   const { data, error } = useGetDataQuery<{
     data: IAboutRoot;

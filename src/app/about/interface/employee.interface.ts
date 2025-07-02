@@ -28,8 +28,8 @@ export interface IAboutMissionVision {
   select: string;
   title: string;
   description: string;
-  icon: any;
-  image: any;
+  icon: string;
+  image: string;
   slug: string;
 }
 
@@ -54,7 +54,7 @@ export interface IAboutOrganizationalStructure {
 export interface IAboutEmployeeDetail {
   name: string;
   designation: string;
-  image: any;
+  image: string;
   phone_no?: number;
   email: string;
 }

@@ -11,7 +11,9 @@ import DateTimeDisplay from "@/utils/getCurrentDateTime";
 const Header = async () => {
   try {
     // global custom hook
-    const organizationSettingData = await getOrganizationSettingData();
+    const organizationSettingData = (await getOrganizationSettingData()) as {
+      data: IOrganizationSettingDaum[];
+    };
 
     const headerData: IOrganizationSettingDaum =
       organizationSettingData?.data[0];

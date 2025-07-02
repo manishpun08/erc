@@ -5,7 +5,7 @@ import { safeFetch } from "@/helper/safeFetch";
 import { ICommissionRoots } from "@/Interface/comission.interface";
 
 export const getHomePageData = async () => {
-  const homeData = await safeFetch(endpoints.homeHero);
+  const homeData = await getData(endpoints.homeHero);
 
   const impServiceData = await getData(endpoints.serviceData, {
     is_important: "true",
