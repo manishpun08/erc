@@ -15,7 +15,6 @@ const MemberDetails = async ({ params }: MemberDetailsId) => {
     const { id } = await params;
 
     const memberDetail = await getData(endpoints.teamDetail + `${id}/`);
-
     return (
       <div className="padding-x padding-y">
         <div className="flex flex-col-reverse lg:flex-row justify-between gap-10">
@@ -23,7 +22,7 @@ const MemberDetails = async ({ params }: MemberDetailsId) => {
           <p
             className="text-text-400 typography-p1-regular text-justify"
             dangerouslySetInnerHTML={{
-              __html: memberDetail?.data?.message || "",
+              __html: memberDetail?.data?.profile || "",
             }}
           />
 
@@ -58,7 +57,7 @@ const MemberDetails = async ({ params }: MemberDetailsId) => {
         </div>
       </div>
     );
-    return <div>page</div>;
+  
   } catch (error) {
     console.error("Error fetching member data:", error);
     return <ErrorMessage errorMessage="member data not found " />;
