@@ -14,20 +14,20 @@ import ServiceLatestNotices from "./partials/LatestNotices";
 
 import SupportTeam from "./partials/SupportTeam";
 
-export async function generateMetadata() {
-  try {
-    const { data } = await getData<ISeoRoot>(endpoints.seo, {
-      seo_for: "homepage",
-    });
+// export async function generateMetadata() {
+//   try {
+//     const { data } = await getData<ISeoRoot>(endpoints.seo, {
+//       seo_for: "homepage",
+//     });
 
-    const meta = createMetadata(data);
+//     const meta = createMetadata(data);
 
-    return meta;
-  } catch (error) {
-    console.error(error, "Error fetching seo home data");
-    return <ErrorMessage errorMessage="seo home data" />;
-  }
-}
+//     return meta;
+//   } catch (error) {
+//     console.error(error, "Error fetching seo home data");
+//     return <ErrorMessage errorMessage="seo home data" />;
+//   }
+// }
 
 const Home = async () => {
   try {
