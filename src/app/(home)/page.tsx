@@ -6,10 +6,10 @@ import TeamSection from "../../components/TeamSection";
 import { getHomePageData } from "./hooks/home.hook";
 import MandatesCommission from "./partials/MandatesCommission";
 import MissionVision from "./partials/MissionVision";
-import { getData } from "@/api/fetch";
-import { endpoints } from "@/api/endpoints";
-import { ISeoRoot } from "@/Interface/seo.interface";
-import { createMetadata } from "@/utils/generateMetaData";
+// import { getData } from "@/api/fetch";
+// import { endpoints } from "@/api/endpoints";
+// import { ISeoRoot } from "@/Interface/seo.interface";
+// import { createMetadata } from "@/utils/generateMetaData";
 import ServiceLatestNotices from "./partials/LatestNotices";
 
 import SupportTeam from "./partials/SupportTeam";

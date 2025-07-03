@@ -9,7 +9,7 @@ const Commission = () => {
     error,
     handleFilter,
     isFormerMember,
-    chairpersonData,
+    // chairpersonData,
     chairpersonError,
   } = useCommission();
   if (error || chairpersonError) {
