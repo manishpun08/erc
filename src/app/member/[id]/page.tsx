@@ -57,7 +57,6 @@ const MemberDetails = async ({ params }: MemberDetailsId) => {
         </div>
       </div>
     );
-  
   } catch (error) {
     console.error("Error fetching member data:", error);
     return <ErrorMessage errorMessage="member data not found " />;

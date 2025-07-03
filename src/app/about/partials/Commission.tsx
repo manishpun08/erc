@@ -20,8 +20,6 @@ const Commission = () => {
   return (
     <div>
       <div className="grid grid-cols-2 lg:grid-cols-3 mt-6 lg:mt-0 gap-4 lg:gap-8">
-      
-      
         {aboutCommission?.map((team, index) => (
           <TeamCard
             key={index}
