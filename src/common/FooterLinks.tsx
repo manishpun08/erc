@@ -115,6 +115,7 @@ export const ImportantLinksSection: React.FC<IImportantLinksData> = ({
           <div key={index}>
             <Link
               href={link?.url}
+              target="_blank"
               className="border-l rounded-[0.25rem] py-[0.1875rem] px-[0.625rem] cursor-pointer"
             >
               {link?.title}
