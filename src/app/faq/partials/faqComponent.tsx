@@ -21,7 +21,7 @@ export default function Accordion({ items }: AccordionProps) {
       </h3>
 
       <div className="w-full lg:w-2xl mx-auto space-y-4">
-        {items.map((item, index) => (
+        {items?.map((item, index) => (
           <div
             key={index}
             className="rounded-[0.5rem] border-l-3 border-blue-300 bg-white shadow-[0px_2px_18px_4px_rgba(51,96,169,0.06)] cursor-pointer"

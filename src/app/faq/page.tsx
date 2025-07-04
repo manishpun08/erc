@@ -31,7 +31,7 @@ const Faq = async () => {
       <div className="container mx-auto py-[2.5rem] px-[1rem] lg:px-[3.12rem] rounded-[0.25rem] bg-background-100 my-[1.5rem] lg:my-[2.5rem]">
         <div className="flex flex-col lg:flex-row justify-between gap-10">
           <div>
-            <Accordion items={faqData?.data} />
+            <Accordion items={faqData?.data?.records} />
           </div>
 
           <div className="h-fit">
