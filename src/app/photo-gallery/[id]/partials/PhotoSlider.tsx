@@ -80,7 +80,7 @@ const PhotoSlider: React.FC<Props> = ({ photoData }) => {
           modules={[Navigation]}
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
-          className="w-full h-[14rem] lg:h-[40rem] border"
+          className="w-full h-[14rem] lg:h-[28rem] border"
           navigation={false}
         >
           {allImages.map((img: IPhotoDetailImage, index) => (
@@ -93,7 +93,7 @@ const PhotoSlider: React.FC<Props> = ({ photoData }) => {
                 alt={`Slide ${index + 1}`}
                 width={322}
                 height={412}
-                className="w-full h-full object-fill rounded-[0.25rem]"
+                className="w-full h-full object-contain rounded-[0.25rem]"
               />
             </SwiperSlide>
           ))}
@@ -105,7 +105,7 @@ const PhotoSlider: React.FC<Props> = ({ photoData }) => {
             <div
               key={index}
               onClick={() => swiperRef.current?.slideTo(index)}
-              className="w-[6rem] h-[4rem] lg:w-[12.6875rem] lg:h-[10.4375rem] rounded-[0.25rem]"
+              className="w-[6rem] h-[4rem] lg:w-[8.6875rem] lg:h-[5.4375rem] rounded-[0.25rem]"
             >
               <Image
                 src={photo.image}

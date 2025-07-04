@@ -40,7 +40,7 @@ const PhotoAlbum: React.FC<Props> = ({ photoData, galleryBanner }) => {
 
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-[2rem] lg:gap-[3rem] mb-[2.5rem]">
         {galleryPhotoData?.map((photo) => (
-          <div key={photo?.id} className="flex flex-col lg:gap-[0.88rem] group">
+          <div key={photo?.id} className="flex flex-col lg:gap-[0.88rem] group overflow-hidden">
             <Link
               href={`photo-gallery/${photo?.id}`}
               className="w-full lg:w-[26.15625rem]  lg:aspect-[418.50/279] overflow-hidden"

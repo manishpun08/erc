@@ -48,7 +48,7 @@ const NoticeTab = () => {
         {/* Regular tab */}
         <button
           onClick={() => setSelectedTab("regular")}
-          className={`p-[0.75rem] lg:p-4 typography-p-regular font-semibold text-center text-white border-b-2 ${
+          className={`p-[0.75rem] lg:p-4 typography-p-regular font-semibold cursor-pointer text-center text-white border-b-2 ${
             selectedTab === "regular" ? "border-white" : "border-transparent"
           } hover:border-white`}
         >
@@ -60,7 +60,7 @@ const NoticeTab = () => {
           <button
             key={index}
             onClick={() => setSelectedTab(tab?.id)}
-            className={`p-[0.75rem] lg:p-4 typography-p-regular font-semibold text-center text-white border-b-2 ${
+            className={`p-[0.75rem] lg:p-4 typography-p-regular cursor-pointer font-semibold text-center text-white border-b-2 ${
               tab.id === selectedTab ? "border-white" : "border-transparent"
             } hover:border-white`}
           >
