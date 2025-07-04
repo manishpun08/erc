@@ -21,7 +21,7 @@ const MissionVision: React.FC<Props> = ({ missionVisionData }) => {
         </div>
         <div className="w-full ">
           <h2 className="typography-h3 font-bold leading-[150%] text-text-500 pb-[0.75rem]">
-          Mission Vision
+            Mission Vision
           </h2>
 
           <p className="typography-p-large capitalize text-text-500 font-semibold pb-[0.62rem]">
