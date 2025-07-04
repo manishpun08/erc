@@ -54,7 +54,7 @@ export function useDocumentPage(initialSlug: string): UseDocumentPageReturn {
   const categoriesList =
     categoryDocumentData?.data?.subcategory?.related_subcategories ?? [];
   const subcategory = categoryDocumentData?.data?.subcategory;
-  const allDocuments = documentData?.records ?? [];
+  const allDocuments = documentData?.data?.records ?? [];
   const pageCount = Math.ceil(allDocuments.length / PER_PAGE);
   const annualReport = subcategory?.is_annual_report;
 
