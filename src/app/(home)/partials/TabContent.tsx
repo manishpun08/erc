@@ -16,7 +16,7 @@ const TabContent: React.FC<Props> = ({ documentData }) => {
 
   return (
     <div className="space-y-[0.88rem]">
-      {documentData?.slice(0,5)?.map((item, index) => (
+      {documentData?.slice(0, 5)?.map((item, index) => (
         <div
           key={index}
           className="py-[1rem] px-[1.25rem] rounded-[0.5rem] border-l-2 border-blue-300 bg-background-100 shadow-[0px_2px_18px_4px_rgba(51,96,169,0.06)] group"
