@@ -40,7 +40,7 @@ const PhotoGallery: React.FC<Props> = async ({ searchParams }) => {
       <div className="padding-x my-10">
         <PhotoAlbum
           photoData={photoGalleryData?.data}
-          galleryBanner={photoBanner?.data[0]}
+          galleryBanner={photoBanner?.data}
         />
       </div>
     );

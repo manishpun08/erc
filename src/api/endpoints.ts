@@ -79,7 +79,7 @@ export const endpoints: Endpoints = {
 
   contact: "/contact/create/",
 
-  photoBanner: "/gallery/banner/list/",
+  photoBanner: "/gallery/banner/",
   photoGallery: "/gallery/list/",
   photoDetail: "/gallery/detail",
   videoList: "/video/list/",
