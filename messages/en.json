@@ -11,7 +11,7 @@
 
   "nav": {
     "home": "Home",
-    "about_us": "About Us",
+    "about_us": "About",
     "introduction": "Introduction",
     "vision_mission": "Vision/Mission",
     "ReportOverview": "Electricity Report Overview",
@@ -31,7 +31,7 @@
     "gallery": "Gallery",
     "photo_gallery": "Photo Gallery",
     "video_gallery": "Video Gallery",
-    "contact_us": "Contact Us",
+    "contact_us": "Contact ",
     "e_filing": "E-Filing",
     "Tariffs": "Tarrifs",
     "Laws & Regulations": "Laws & Regulations",
@@ -118,7 +118,7 @@
     "Copyright": "Electricity Regulatory Commission © All Rights Reserved",
     "Terms": "Terms & Condition",
     "Privacy": "Privacy Policy",
-    "ContactUs": "Contact Us",
+    "ContactUs": "Contact ",
     "PublicHearing": "Public Hearing"
   },
 
@@ -130,8 +130,8 @@
   },
 
   "Breadcrumb": {
-    "ContactUs": "Contact Us",
-    "AboutUs": "About Us",
+    "ContactUs": "Contact ",
+    "AboutUs": "About",
     "ApplicationStatus": "Application Status"
   },
 
