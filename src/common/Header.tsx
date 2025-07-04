@@ -12,11 +12,11 @@ const Header = async () => {
   try {
     // global custom hook
     const organizationSettingData = (await getOrganizationSettingData()) as {
-      data: IOrganizationSettingDaum[];
+      data: IOrganizationSettingDaum;
     };
 
     const headerData: IOrganizationSettingDaum =
-      organizationSettingData?.data[0];
+      organizationSettingData?.data;
 
     return (
       <header className="relative w-full">

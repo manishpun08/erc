@@ -8,9 +8,9 @@ const PrivacyPolicy = async () => {
     const organizationSettingData = await getOrganizationSettingData();
 
     const privacyData: IOrganizationSettingDaum =
-      organizationSettingData?.data[0];
+      organizationSettingData?.data;
 
-    const data = privacyData?.terms_condition;
+    const data = privacyData?.privacy_policy;
 
     return (
       <div className="padding-x py-10">

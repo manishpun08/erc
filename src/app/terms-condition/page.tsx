@@ -8,9 +8,9 @@ const TermsCondition = async () => {
     const organizationSettingData = await getOrganizationSettingData();
 
     const termsConditionData: IOrganizationSettingDaum =
-      organizationSettingData?.data[0];
+      organizationSettingData?.data;
 
-    const data = termsConditionData?.privacy_policy;
+    const data = termsConditionData?.terms_condition;
 
     return (
       <div className="padding-x py-10">

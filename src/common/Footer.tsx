@@ -16,7 +16,7 @@ const Footer: React.FC = async () => {
     const organizationSettingData = await getOrganizationSettingData();
 
     const footerData: IOrganizationSettingDaum =
-      organizationSettingData?.data[0];
+      organizationSettingData?.data;
 
     const importantLinks = await getImportantLinks();
     const importantLinksData = importantLinks;

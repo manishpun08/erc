@@ -52,7 +52,7 @@ interface Endpoints {
 }
 
 export const endpoints: Endpoints = {
-  organizationSetting: "/organization/list/",
+  organizationSetting: "/organization/",
   navLinks: "/maincategory/list/",
   navNews: "/news/list/",
   popup: "/popup/list/",
