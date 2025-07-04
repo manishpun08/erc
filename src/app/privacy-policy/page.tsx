@@ -7,8 +7,7 @@ const PrivacyPolicy = async () => {
   try {
     const organizationSettingData = await getOrganizationSettingData();
 
-    const privacyData: IOrganizationSettingDaum =
-      organizationSettingData?.data;
+    const privacyData: IOrganizationSettingDaum = organizationSettingData?.data;
 
     const data = privacyData?.privacy_policy;
 

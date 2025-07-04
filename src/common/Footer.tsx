@@ -15,8 +15,7 @@ const Footer: React.FC = async () => {
     // global custom hook
     const organizationSettingData = await getOrganizationSettingData();
 
-    const footerData: IOrganizationSettingDaum =
-      organizationSettingData?.data;
+    const footerData: IOrganizationSettingDaum = organizationSettingData?.data;
 
     const importantLinks = await getImportantLinks();
     const importantLinksData = importantLinks;

@@ -15,8 +15,7 @@ const Header = async () => {
       data: IOrganizationSettingDaum;
     };
 
-    const headerData: IOrganizationSettingDaum =
-      organizationSettingData?.data;
+    const headerData: IOrganizationSettingDaum = organizationSettingData?.data;
 
     return (
       <header className="relative w-full">
