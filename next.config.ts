@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "http",
-        hostname: "electricity.pokharauae.com",
+        hostname: "api.ayatabaya.com",
         pathname: "/**",
       },
       {
