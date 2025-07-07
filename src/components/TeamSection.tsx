@@ -12,7 +12,7 @@ interface Props {
 const TeamSection: React.FC<Props> = ({ teamData, chairperson }) => {
   return (
     <div>
-      {teamData?.length > 0 && (
+      {
         <div className="padding-x  mb-[2.5rem]">
           {/* Chairperson Block */}
           <div className="w-[21.53331rem] mx-auto group">
@@ -39,19 +39,21 @@ const TeamSection: React.FC<Props> = ({ teamData, chairperson }) => {
 
           {/* Other team members */}
           <div className="grid grid-cols-2 lg:grid-cols-4 mt-6 lg:mt-0 gap-4 lg:gap-5 max-w-[280rem] mx-auto">
-            {teamData?.map((team, index) => (
-              <TeamCard
-                key={index}
-                name={team.name}
-                designation={team.designation}
-                email={team.email}
-                image={team.image}
-                id={team.slug}
-              />
-            ))}
+            {teamData
+              ?.filter((team) => !team.is_chairperson)
+              ?.map((team, index) => (
+                <TeamCard
+                  key={index}
+                  name={team.name}
+                  designation={team.designation}
+                  email={team.email}
+                  image={team.image}
+                  id={team.slug}
+                />
+              ))}
           </div>
         </div>
-      )}
+      }
     </div>
   );
 };

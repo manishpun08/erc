@@ -14,7 +14,7 @@ export const getHomePageData = async () => {
   const missionVisionData = await safeFetch<IAboutRoot>(endpoints.about);
   const serviceData = await getData(endpoints.serviceData);
   const teamData = await getData(endpoints.homeTeam, {
-    is_former_member: "true",
+    is_former_member: "false",
   });
   const chairperson = await getData<ICommissionRoots>(endpoints.homeTeam, {
     is_chairperson: "true",

@@ -37,7 +37,7 @@ const Commission = () => {
           onClick={() => handleFilter(false)}
           className={` text-white uppercase font-semibold typography-p-regular px-4 py-2 rounded-[0.5rem] cursor-pointer ${isFormerMember ? "bg-blue-500 cursor-pointer" : "bg-blue-500/50 cursor-not-allowed "} `}
         >
-          Previous Chairpersons
+          Previous Members
         </button>
         <button
           disabled={isFormerMember}

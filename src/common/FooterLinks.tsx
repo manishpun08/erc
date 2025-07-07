@@ -112,15 +112,13 @@ export const ImportantLinksSection: React.FC<IImportantLinksData> = ({
 
       <ul className="text-white font-medium typography-p-small space-y-[1.25rem]">
         {importantLinksData?.data?.records?.map((link, index) => (
-          <div key={index}>
-            <Link
-              href={link?.url}
-              target="_blank"
-              className="border-l rounded-[0.25rem] py-[0.1875rem] px-[0.625rem] cursor-pointer"
-            >
-              {link?.title}
+          <li key={index}>
+            <Link href={link?.url} target="_blank">
+              <p className="border-l rounded-[0.25rem] py-[0.1875rem] px-[0.625rem] cursor-pointer ">
+                {link?.title}
+              </p>
             </Link>
-          </div>
+          </li>
         ))}
       </ul>
     </div>

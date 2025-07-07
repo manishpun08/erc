@@ -39,6 +39,7 @@ const Home = async () => {
       teamData,
       chairperson,
     } = await getHomePageData();
+    console.log(teamData, "teamData");
     return (
       <div className="mb-10">
         <Hero heroData={homeData?.data[0]} />
