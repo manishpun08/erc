@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "electricity.pokharauae.com",
+        hostname: "api.ayatabaya.com",
         pathname: "/**",
       },
       {

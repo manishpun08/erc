@@ -35,7 +35,7 @@ const CustomPagination = ({
           <button
             onClick={() => onPageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
             <MdKeyboardArrowLeft className="w-5 h-5" />
           </button>
@@ -44,7 +44,7 @@ const CustomPagination = ({
             <button
               key={pageNum}
               onClick={() => onPageChange(pageNum)}
-              className={`px-3.5 py-2 rounded-[0.25rem] typography-p-small font-medium border-[0.5px] border-blue-300  ${
+              className={`px-3.5 py-2 rounded-[0.25rem] typography-p-small font-medium border-[0.5px] border-blue-300 cursor-pointer  ${
                 currentPage === pageNum
                   ? "bg-user-primary text-white bg-blue-300"
                   : "hover:bg-blue-200 text-blue-400 hover:text-white"
@@ -57,7 +57,7 @@ const CustomPagination = ({
           <button
             onClick={() => onPageChange(currentPage + 1)}
             disabled={currentPage === pageCount}
-            className="p-2 rounded-lg hover:bg-user-primary/60 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-2 rounded-lg hover:bg-user-primary/60 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
             <MdKeyboardArrowRight className="w-5 h-5" />
           </button>
