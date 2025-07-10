@@ -21,8 +21,7 @@ const DesktopNavbar: React.FC<Props> = ({ sortedLinks }) => {
       const isActive = activeDropdown === navItem.id;
       const hasSubcategories = navItem?.subcategories?.length > 0;
 
-      const label = shouldTranslate ? t(navItem?.name) : navItem?.name;
-
+      const label = t(navItem?.name);
       return (
         <div
           key={navItem?.id}

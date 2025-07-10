@@ -26,7 +26,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         <button
           key={item?.id}
           onClick={() => handleClick(item?.id)}
-          className="flex flex-col items-center border border-blue-100 bg-white rounded-[0.22363rem] text-center py-[0.92rem] px-[1.17rem] hover:bg-blue-50 transition-colors"
+          className="flex flex-col items-center border border-blue-100 bg-white rounded-[0.22363rem] text-center lg:py-[0.92rem] px-[1.17rem] hover:bg-blue-50 transition-colors"
         >
           <div className="flex items-center justify-center mb-[0.34rem] h-12 w-12 text-blue-400">
             <div className="w-20 h-10 mb-2">

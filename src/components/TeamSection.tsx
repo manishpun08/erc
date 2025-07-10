@@ -15,7 +15,7 @@ const TeamSection: React.FC<Props> = ({ teamData, chairperson }) => {
       {
         <div className="padding-x  mb-[2.5rem]">
           {/* Chairperson Block */}
-          <div className="w-[21.53331rem] mx-auto group">
+          <div className="max-w-[21.53331rem] mx-auto group">
             <TeamCard
               name={chairperson?.name}
               designation={chairperson?.designation}

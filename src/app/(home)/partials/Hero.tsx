@@ -27,7 +27,7 @@ const Hero: React.FC<Props> = ({ heroData }) => {
   return (
     <div className="my-[1.5rem] lg:my-[2.5rem] padding-x">
       {/* Main Container - Added min-h-[500px] for proper sizing */}
-      <div className="relative min-h-[500px] z-5 bg-blue-500 text-white py-[7.5rem] px-4 lg:px-0 lg:pl-[3.75rem] rounded-[0.25rem] overflow-hidden">
+      <div className="relative min-h-[300px] md:min-h-[500px] z-5 bg-blue-500 text-white py-10 md:py-[7.5rem] px-4 lg:px-0 lg:pl-[3.75rem] rounded-[0.25rem] overflow-hidden">
         {/* Background Image - Fixed positioning and sizing */}
         <div className="absolute inset-0 w-full h-full">
           <Image
@@ -36,33 +36,32 @@ const Hero: React.FC<Props> = ({ heroData }) => {
             fill
             priority
             quality={80}
-            className="object-cover opacity-20"
-            sizes="100vw"
+            className="object-cover opacity-20 w-full h-full"
           />
         </div>
 
         {/* Content */}
         <div className="relative z-10 lg:w-[32rem]">
-          <h1 className="text-[1.9375rem] lg:text-[2.9375rem] text-white font-bold leading-[130%] pb-[0.62rem]">
+          <h1 className="text-[1.3375rem] lg:text-[2.9375rem] text-white font-bold leading-[130%] pb-[0.62rem]">
             {heroData?.slogan}
           </h1>
-          <p className="typography-p-large text-white pb-[1.25rem]">
+          <p className="typography-p-regular  lg:typography-p-large text-white pb-[1.25rem]">
             {heroData?.title}
           </p>
         </div>
 
         {/* Buttons */}
-        <div className="relative z-10 flex flex-row gap-[1.12rem] pt-4">
+        <div className="relative z-10 flex flex-col text-center lg:flex-row gap-[1.12rem] pt-4">
           <Link
             href="/about?tab=Introduction"
-            className="py-[0.62rem] px-2 lg:px-[1.25rem] text-blue-500 typography-p-large font-semibold bg-white rounded-[0.5rem] shadow-[0px_4px_5.3px_0px rgba(0,0,0,0.25)] cursor-pointer"
+            className="py-[0.62rem] px-2 lg:px-[1.25rem] text-blue-500 typography-p-regular lg:typography-p-large font-semibold bg-white rounded-[0.5rem] shadow-[0px_4px_5.3px_0px rgba(0,0,0,0.25)] cursor-pointer"
           >
             {t("KnowMore")}
           </Link>
 
           <Link
             href="/submit-a-complain"
-            className="py-[0.62rem] px-2 lg:px-[1.25rem] border border-white text-white typography-p-large font-semibold bg-[rgba(255,255,255,0.12)] rounded-[0.5rem] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] backdrop-blur-md cursor-pointer"
+            className="py-[0.62rem] px-2 lg:px-[1.25rem] border border-white text-white typography-p-regular  lg:typography-p-large font-semibold bg-[rgba(255,255,255,0.12)] rounded-[0.5rem] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] backdrop-blur-md cursor-pointer"
           >
             {t("SubmitComplaint")}
           </Link>

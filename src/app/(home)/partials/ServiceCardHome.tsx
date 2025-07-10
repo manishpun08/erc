@@ -15,14 +15,14 @@ const ServiceCardHome: React.FC<IService> = ({ slug, icon, name }) => {
         {/* Base Card */}
         <Link
           href={`/service/${slug}`}
-          className="bg-blue-400 rounded-[0.5rem]  text-center relative overflow-hidden cursor-pointer w-full h-fit py-6"
+          className="bg-blue-400 rounded-[0.5rem]  text-center relative overflow-hidden cursor-pointer w-full h-fit py-4 lg:py-6"
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
 
           {/* Content */}
           <div className="relative z-20 flex flex-col items-center justify-center">
-            <div className="w-10 h-10 lg:w-[4rem] lg:h-[4rem] ">
+            <div className="w-8 h-8 lg:w-[4rem] lg:h-[4rem] ">
               <Image
                 src={icon}
                 alt="Service Icon"
