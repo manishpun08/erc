@@ -191,5 +191,12 @@
 
   "docs": {
     "noDocuments": "No documents found."
+  },
+
+  "button": {
+    "open": "Open",
+    "close": "Close",
+    "Active_Members": "Active Members",
+    "Former_Members": "Former Members"
   }
 }

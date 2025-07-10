@@ -2,6 +2,7 @@ import ErrorMessage from "@/components/ErrorMessage";
 import TeamCard from "@/components/TeamCard";
 
 import { useCommission } from "../hooks/useCommission";
+import { useTranslations } from "next-intl";
 
 const Commission = () => {
   const {
@@ -12,6 +13,9 @@ const Commission = () => {
     // chairpersonData,
     chairpersonError,
   } = useCommission();
+
+  const t = useTranslations("button");
+
   if (error || chairpersonError) {
     console.error("Failed to load commission data:", error);
     return <ErrorMessage errorMessage="commission data" />;
@@ -37,14 +41,14 @@ const Commission = () => {
           onClick={() => handleFilter(false)}
           className={` text-white uppercase font-semibold typography-p-regular px-4 py-2 rounded-[0.5rem] cursor-pointer ${isFormerMember ? "bg-blue-500 cursor-pointer" : "bg-blue-500/50 cursor-not-allowed "} `}
         >
-          Previous Members
+          {t("Active_Members")}
         </button>
         <button
           disabled={isFormerMember}
           onClick={() => handleFilter(true)}
           className={` text-white uppercase font-semibold typography-p-regular px-4 py-2 rounded-[0.5rem] cursor-pointer ${!isFormerMember ? "bg-blue-500 cursor-pointer" : "bg-blue-500/50 cursor-not-allowed"} `}
         >
-          Previous Members
+          {t("Former_Members")}
         </button>
       </div>
     </div>

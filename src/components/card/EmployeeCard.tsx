@@ -11,7 +11,7 @@ const EmployeeCard: React.FC<Props> = ({ team }) => {
   return (
     <>
       <div className="w-full group flex flex-col bg-background-100 border-2 border-background-100 rounded-[0.5rem]">
-        <div className=" max-h-[20rem] aspect-[260/290] overflow-hidden cursor-pointer w-full rounded-t-[0.5rem]">
+        <div className=" aspect-[250/290] overflow-hidden cursor-pointer w-full rounded-t-[0.5rem]">
           <Image
             src={team?.image}
             alt={team?.name}
