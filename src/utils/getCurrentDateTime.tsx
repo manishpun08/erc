@@ -130,7 +130,7 @@ const DateTimeToggle: React.FC = () => {
         });
 
   return (
-    <div>
+    <div className="  text-sm md:text-base">
       <div>{formattedDate}</div>
       <div>{formattedTime}</div>
     </div>

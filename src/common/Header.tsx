@@ -47,7 +47,7 @@ const Header = async () => {
             <div className="flex gap-3 items-center w-fit ">
               <Link
                 href="/"
-                className="w-[4.5rem] sm:w-[5rem] md:w-[5.47988rem] aspect-[87.68/74] flex-shrink-0 "
+                className="w-[3.5rem] sm:w-[5rem] md:w-[5.47988rem] aspect-[87.68/74] flex-shrink-0 "
               >
                 <Image
                   src={headerData?.gov_logo}
@@ -58,11 +58,11 @@ const Header = async () => {
                 />
               </Link>
               <div className="text-white">
-                <div className="text-lg sm:text-xl notranslate md:text-[1.85125rem] font-semibold leading-[150%] tracking-tight">
+                <div className="text-xs sm:text-xl notranslate md:text-[1.85125rem] font-semibold leading-[150%] tracking-tight">
                   {/* {headerData?.organization_name} */}
                   विद्युत नियमन आयोग
                 </div>
-                <div className="text-lg  notranslate  font-semibold leading-[150%] tracking-tight">
+                <div className="text-xs  notranslate  font-semibold leading-[150%] tracking-tight">
                   {/* {headerData?.organization_name} */}
                   Electricity Regulatory Commission
                 </div>
