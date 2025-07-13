@@ -25,5 +25,7 @@ export interface ITeamRecord {
   profile: string;
   image: string;
   slug: string;
+  start_date: string;
+  end_date: string;
   is_chairperson: boolean;
 }

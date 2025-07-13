@@ -6,6 +6,7 @@ import OrganizationStructure from "./OrganizationStructure";
 import CeoMessage from "./CeoMessage";
 import EmployeeDetail from "./EmployeeDetail";
 import Commission from "./Commission";
+import SectorOverview from "./SectionOverview";
 
 export const useAboutSidebar = () => {
   const t = useTranslations("about");
@@ -30,6 +31,11 @@ export const useAboutSidebar = () => {
       name: t("FunctionsDuties"),
       key: "FunctionsDuties",
       content: <FunctionDuties />,
+    },
+    {
+      name: t("sector_overview"),
+      key: "SectorOverview",
+      content: <SectorOverview />,
     },
     {
       name: t("Commission"),

@@ -43,10 +43,10 @@ const Hero: React.FC<Props> = ({ heroData }) => {
         {/* Content */}
         <div className="relative z-10 lg:w-[32rem]">
           <h1 className="text-[1.3375rem] lg:text-[2.9375rem] text-white font-bold leading-[130%] pb-[0.62rem]">
-            {heroData?.slogan}
+            {heroData?.title}
           </h1>
           <p className="typography-p-regular  lg:typography-p-large text-white pb-[1.25rem]">
-            {heroData?.title}
+            {heroData?.slogan}
           </p>
         </div>
 

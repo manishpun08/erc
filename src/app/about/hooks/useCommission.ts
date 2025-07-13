@@ -11,8 +11,8 @@ export const useCommission = () => {
   const { data, error } = useGetDataQuery({
     url: endpoints.homeTeam,
     params: {
-      is_former_member: isFormerMember ? "true" : "false",
-      is_former_chairperson: isFormerMember ? "true" : "false",
+      former_member: isFormerMember ? "true" : "false",
+      former_chairperson: isFormerMember ? "true" : "false",
     },
   });
 

@@ -28,7 +28,7 @@ const FunctionDuties = () => {
       {/* Function */}
       <div className="mt-5">
         <p
-          className="typography-p-regular-medium text-text-500"
+          className=" prose "
           dangerouslySetInnerHTML={{
             __html: aboutDutiesFunction?.description || "",
           }}

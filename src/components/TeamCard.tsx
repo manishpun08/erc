@@ -9,6 +9,8 @@ interface TeamCardProps {
   designation: string;
   email?: string;
   image: string;
+  start_date?: string;
+  end_date?: string;
   isChairperson?: boolean;
   id?: string;
 }
@@ -19,6 +21,8 @@ const TeamCard = ({
   image,
   id,
   isChairperson = false,
+  start_date,
+  end_date,
 }: TeamCardProps) => {
   const t = useTranslations("home");
 
@@ -44,6 +48,12 @@ const TeamCard = ({
           <p className="typography-p-regular text-text-500 font-bold pb-[0.5rem]">
             {designation}
           </p>
+          {start_date && end_date && (
+            <p className="typography-p-regular text-text-500 font-bold pb-[0.5rem]">
+              {start_date} {end_date}
+            </p>
+          )}
+
           {!isChairperson ? (
             <Link
               href={`${PATH.team_member_details}/${id}`}

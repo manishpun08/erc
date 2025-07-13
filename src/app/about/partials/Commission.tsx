@@ -31,6 +31,8 @@ const Commission = () => {
             email={team?.email}
             image={team?.image}
             name={team?.name}
+            start_date={team?.start_date}
+            end_date={team?.end_date}
             id={team?.slug}
           />
         ))}

@@ -110,7 +110,7 @@ export const ImportantLinksSection: React.FC<IImportantLinksData> = ({
         {t("ImportantLinks")}
       </h3>
 
-      <ul className="text-white font-medium typography-p-small space-y-[1.25rem]">
+      <ul className="text-white font-medium typography-p-small space-y-3">
         {importantLinksData?.data?.records?.map((link, index) => (
           <li key={index}>
             <Link href={link?.url} target="_blank">

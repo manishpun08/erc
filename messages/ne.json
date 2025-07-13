@@ -10,7 +10,7 @@
   },
 
   "nav": {
-    "home": "होम",
+    "home": "गृहपृष्ठ",
     "about_us": "हाम्रो बारेमा",
     "introduction": "परिचय",
     "vision_mission": "दृष्टिकोण / मिशन",
@@ -59,7 +59,8 @@
     "Online Application": "अनलाइन आवेदन",
     "Syllabus": "पाठ्यक्रम",
     "Vacancy Related Notices": "खाली स्थान सम्बन्धी सूचना",
-    "Public Hearing": "सार्वजनिक सुनुवाइ"
+    "Public Hearing": "सार्वजनिक सुनुवाइ",
+    "sector_overview": "क्षेत्रको अवलोकन"
   },
 
   "home": {
@@ -85,7 +86,8 @@
     "Commission": "आयोग",
     "OrganizationalStructure": "संगठन संरचना",
     "ChairpersonMessage": "अध्यक्षको सन्देश",
-    "EmployeeDetails": "कर्मचारी विवरण"
+    "EmployeeDetails": "कर्मचारी विवरण",
+    "sector_overview": "क्षेत्रको अवलोकन"
   },
 
   "contact": {

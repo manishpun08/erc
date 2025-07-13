@@ -12,7 +12,7 @@ const EmployeeDetail = () => {
     error: string;
   }>({
     url: endpoints.about,
-    params: { is_technical_staff: "true" },
+    params: { grievance_person: "true" },
   });
   const t = useTranslations("home");
   if (error) {

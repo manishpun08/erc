@@ -59,7 +59,8 @@
     "Online Application": "Online Application",
     "Syllabus": "Syllabus",
     "Vacancy Related Notices": "Vacancy Related Notices",
-    "Public Hearing": "Public Hearing"
+    "Public Hearing": "Public Hearing",
+    "sector_overview": "Sector Overview"
   },
 
   "home": {
@@ -85,7 +86,8 @@
     "Commission": "Commission",
     "OrganizationalStructure": "Organizational Structure",
     "ChairpersonMessage": "Message from Chairperson",
-    "EmployeeDetails": "Employee Details"
+    "EmployeeDetails": "Employee Details",
+    "sector_overview": "Sector Overview"
   },
 
   "contact": {
