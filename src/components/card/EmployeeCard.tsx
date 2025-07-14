@@ -11,10 +11,7 @@ const EmployeeCard: React.FC<Props> = ({ team }) => {
   return (
     <>
       <div className="w-full group flex flex-col bg-background-100 border-2 border-background-100 rounded-[0.5rem]">
-        <h2 className="text-blue-500 typography-p-large font-bold  text-center py-4">
-          {team?.title}
-        </h2>
-        <div className=" aspect-[250/290] overflow-hidden cursor-pointer w-full rounded-t-[0.5rem]">
+        <div className=" aspect-[250/290] relative overflow-hidden cursor-pointer w-full rounded-t-[0.5rem]">
           <Image
             src={team?.image}
             alt={team?.name}
@@ -22,6 +19,11 @@ const EmployeeCard: React.FC<Props> = ({ team }) => {
             height={800}
             className="w-full h-full object-cover rounded-t-[0.5rem] transform transition-transform duration-500 ease-in-out group-hover:scale-105"
           />
+          {team?.heading && (
+            <h2 className="text-white p-2 typography-p-small font-bold  text-center  absolute bottom-0 left-0 bg-blue-500">
+              {team?.heading}
+            </h2>
+          )}
         </div>
 
         <div className="  overflow-hidden">

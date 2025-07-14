@@ -19,19 +19,18 @@ const SectorOverview = () => {
   }
 
   const aboutSectorOverview: ISectorOverview =
-    data?.data[0]?.electricity_sector_overview;
+    data?.data?.electricity_sector_overview;
 
   return (
-    <div className=" bg-background-400 ">
+    <div className=" bg-background-400 w-full ">
       <p className="typography-h3-bold text-text-500">
         {aboutSectorOverview?.title}
       </p>
 
-      <div className="mt-5">
-        <p className="typography-p-regular-medium text-text-500">
-          {aboutSectorOverview?.description}
-        </p>
-      </div>
+      <p
+        className=" prose mt-5 min-w-full"
+        dangerouslySetInnerHTML={{ __html: aboutSectorOverview?.description }}
+      />
     </div>
   );
 };

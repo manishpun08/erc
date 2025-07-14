@@ -33,7 +33,7 @@ export const useAboutSidebar = () => {
       content: <FunctionDuties />,
     },
     {
-      name: t("sector_overview"),
+      name: t("SectorOverview"),
       key: "SectorOverview",
       content: <SectorOverview />,
     },

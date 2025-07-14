@@ -21,6 +21,7 @@ interface DynamicNavLinksSubcategory extends INavLinksSubcategory {
 }
 
 const Navbar = async () => {
+  const baseNavLinks = await navLinks();
   try {
     const [dynamicNavLinkData, soaCategoryData] = await Promise.all([
       getDynamicNavLinksData(),
@@ -47,7 +48,7 @@ const Navbar = async () => {
       );
 
     // Process static nav links
-    const updatedNavLinks = navLinks?.map((item) => {
+    const updatedNavLinks = baseNavLinks?.map((item) => {
       if (item.name === "status_of_application") {
         return {
           ...item,

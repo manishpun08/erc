@@ -4,7 +4,7 @@ export interface IEmployeeDetail {
   image: string;
   email: string;
   phone_no?: number;
-  title: string;
+  heading: string;
 }
 
 export interface IAboutRoot {
@@ -57,6 +57,6 @@ export interface IAboutEmployeeDetail {
   designation: string;
   image: string;
   phone_no?: number;
-  title: string;
+  heading: string;
   email: string;
 }
