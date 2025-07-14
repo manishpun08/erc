@@ -41,6 +41,7 @@ const Navbar = async () => {
               ): DynamicNavLinksSubcategory => ({
                 ...sub,
                 id: `dynamic-sub-${i}-${j}`,
+                noTranslate: true,
                 sub_ctg_slug: `/act/${sub?.sub_ctg_slug?.replace(/^\/+/, "")}`,
               })
             ) || [],

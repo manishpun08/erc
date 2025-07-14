@@ -20,7 +20,7 @@ const EmployeeCard: React.FC<Props> = ({ team }) => {
             className="w-full h-full object-cover rounded-t-[0.5rem] transform transition-transform duration-500 ease-in-out group-hover:scale-105"
           />
           {team?.heading && (
-            <h2 className="text-white p-2 typography-p-small font-bold  text-center  absolute bottom-0 left-0 bg-blue-500">
+            <h2 className="text-white p-2 typography-p-regular font-bold  text-center  absolute bottom-0 left-0 bg-blue-500">
               {team?.heading}
             </h2>
           )}
