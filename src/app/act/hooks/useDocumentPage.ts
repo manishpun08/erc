@@ -51,8 +51,13 @@ export function useDocumentPage(initialSlug: string): UseDocumentPageReturn {
       page_size: 10,
     },
   });
-  const categoriesList =
-    categoryDocumentData?.data?.subcategory?.related_subcategories ?? [];
+  const categoriesList = categoryDocumentData?.data?.subcategory
+    ?.related_subcategories
+    ? [
+        ...categoryDocumentData?.data?.subcategory?.related_subcategories,
+        categoryDocumentData?.data?.subcategory,
+      ]
+    : [];
   const subcategory = categoryDocumentData?.data?.subcategory;
   const allDocuments = documentData?.data?.records ?? [];
   const pageCount = Math.ceil(allDocuments.length / PER_PAGE);

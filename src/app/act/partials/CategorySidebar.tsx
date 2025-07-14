@@ -19,19 +19,21 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({
       </h2>
 
       <nav className="flex flex-col space-y-2 ">
-        {categories?.map((category) => (
-          <button
-            key={category.id}
-            onClick={() => onCategoryClick(category)}
-            className={`py-3 px-4 text-left rounded-md transition-colors typography-p-small cursor-pointer ${
-              selectedCategory === category?.name
-                ? "bg-blue-300 text-white"
-                : "bg-white hover:bg-blue-100"
-            }`}
-          >
-            {category?.name}
-          </button>
-        ))}
+        {categories
+          ?.sort((a, b) => a.ordering - b.ordering)
+          ?.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => onCategoryClick(category)}
+              className={`py-3 px-4 text-left rounded-md transition-colors typography-p-small cursor-pointer ${
+                selectedCategory === category?.name
+                  ? "bg-blue-300 text-white"
+                  : "bg-white hover:bg-blue-100"
+              }`}
+            >
+              {category?.name}
+            </button>
+          ))}
       </nav>
     </aside>
   );

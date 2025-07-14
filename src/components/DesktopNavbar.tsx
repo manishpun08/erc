@@ -13,15 +13,12 @@ interface Props {
 const DesktopNavbar: React.FC<Props> = ({ sortedLinks }) => {
   const t = useTranslations("nav");
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const renderNavItems = (
-    navItems: INavLinksCategory[],
-    shouldTranslate: boolean = false
-  ) =>
+  const renderNavItems = (navItems: INavLinksCategory[]) =>
     navItems?.map((navItem) => {
       const isActive = activeDropdown === navItem.id;
       const hasSubcategories = navItem?.subcategories?.length > 0;
 
-      const label = t(navItem?.name);
+      const label = navItem?.noTranslate ? navItem?.name : t(navItem?.name);
       return (
         <div
           key={navItem?.id}
@@ -59,9 +56,12 @@ const DesktopNavbar: React.FC<Props> = ({ sortedLinks }) => {
           {/* subcategory */}
           {hasSubcategories && (
             <div
-              className={`absolute left-0 top-full mt-3.5 w-48 bg-white shadow-lg rounded-md z-50 transition-all duration-200 ${
+              className={`absolute left-0 top-full mt-3.5  w-60 bg-white shadow-lg rounded-md z-50 transition-all duration-200  max-h-96 overflow-y-auto  ${
                 isActive ? "opacity-100 visible" : "opacity-0 invisible"
               }`}
+              style={{
+                scrollbarWidth: "thin",
+              }}
             >
               {navItem?.subcategories?.map((subItem) => (
                 <Link
@@ -70,10 +70,6 @@ const DesktopNavbar: React.FC<Props> = ({ sortedLinks }) => {
                   onClick={() => setActiveDropdown(null)}
                   className="block px-4 py-[0.62rem] text-sm text-text-500 hover:bg-blue-400 hover:text-white"
                 >
-                  {shouldTranslate && !subItem?.noTranslate
-                    ? t(subItem.name)
-                    : subItem.name}
-
                   {subItem?.noTranslate ? subItem.name : t(subItem.name)}
                 </Link>
               ))}
@@ -86,7 +82,7 @@ const DesktopNavbar: React.FC<Props> = ({ sortedLinks }) => {
   return (
     <div className="hidden md:flex items-center py-3 padding-x">
       <div className="flex flex-wrap gap-[1.5rem] items-center ">
-        {renderNavItems(sortedLinks, true)}
+        {renderNavItems(sortedLinks)}
         {/* {renderNavItems(dynamicData, false)} */}
 
         <Link

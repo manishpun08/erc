@@ -33,6 +33,7 @@ const Navbar = async () => {
         (category: INavLinksCategory, i: number): DynamicNavLinksCategory => ({
           ...category,
           id: `dynamic-${i}`,
+          noTranslate: true,
           subcategories:
             category?.subcategories?.map(
               (

@@ -10,6 +10,7 @@ export interface INavLinksCategory {
   name: string;
   main_ctg_slug: string;
   ordering: number;
+  noTranslate?: boolean; // optional flag to skip translation
   subcategories: INavLinksSubcategory[];
 }
 
