@@ -51,18 +51,24 @@ export const Company: React.FC<ICompany> = ({ footerData }) => {
 
           {/* Phone */}
           {footerData?.phone && (
-            <li className="flex items-center gap-[0.38rem]">
+            <Link
+              href={`tel:${footerData.phone}`}
+              className="flex items-center gap-[0.38rem]"
+            >
               <MdCall className="shrink-0" size={20} />
               {footerData.phone}
-            </li>
+            </Link>
           )}
 
           {/* Email */}
           {footerData?.email && (
-            <li className="flex items-center gap-[0.38rem]">
+            <Link
+              href={`mailto:${footerData.email}`}
+              className="flex items-center gap-[0.38rem]"
+            >
               <IoMail className="shrink-0" size={20} />
               {footerData.email}
-            </li>
+            </Link>
           )}
 
           {/* Social Media Icons */}
