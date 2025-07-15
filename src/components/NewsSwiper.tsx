@@ -13,9 +13,9 @@ const NewsSwiper: React.FC<NewsSwiperProps> = ({ newsData }) => {
   // Duplicate newsData
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden w-full">
       <Marquee pauseOnHover={true} pauseOnClick={true} speed={80}>
-        {newsData.map((item, index) => (
+        {newsData?.map((item, index) => (
           <div
             key={index}
             className="text-white px-5 cursor-pointer typography-p-regular"

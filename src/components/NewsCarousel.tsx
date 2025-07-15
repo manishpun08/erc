@@ -1,3 +1,4 @@
+"use server";
 import { getNavNewsData } from "@/hooks/globalHook";
 import ErrorMessage from "./ErrorMessage";
 import { INewsRecord } from "@/Interface/news.interface";
@@ -8,9 +9,6 @@ const NewsCarousel = async () => {
     const navNewsData = await getNavNewsData();
     const newsData: INewsRecord[] = navNewsData?.data?.records || [];
 
-    if (newsData?.length > 0) {
-      return null;
-    }
     // Pass newsData as prop to client side component
     return <NewsSwiper newsData={newsData} />;
   } catch (error) {
