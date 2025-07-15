@@ -39,39 +39,43 @@ export default function DocumentCard({
             {title}
           </Link>
         ) : (
-          <p dangerouslySetInnerHTML={{ __html: description || "" }} />
+          <p
+            className="typography-p-regular !text-blue-500 font-medium hover:text-blue-700 transition-colors duration-200"
+            dangerouslySetInnerHTML={{ __html: description || "" }}
+          />
         )}
 
         <p className="typography-p-small text-text-300 font-medium pt-[0.62rem]">
           {t("PublishedDate")}: {formatNepaliDate(date, locale)}
         </p>
       </div>
-
-      <div className="flex items-center gap-[0.75rem]">
-        <Link
-          href={`${file}`}
-          className="flex items-center justify-center w-[1.25rem] h-[1.25rem] lg:w-[2.125rem] lg:h-[2.125rem]"
-          title="Download PDF"
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src="/pdf2.svg"
-            alt="pdf"
-            width={400}
-            height={400}
-            className="w-full h-full object-cover"
-          />
-        </Link>
-        <Link
-          href={`${PATH.ACT}/${slugBefore}/${slug}`}
-          className="flex items-center justify-center "
-          title="View Document"
-        >
-          <IoEyeSharp className="text-blue-400  lg:w-[2.125rem] lg:h-[2.125rem]" />
-        </Link>
-      </div>
+      {title !== "Online Application" && (
+        <div className="flex items-center gap-[0.75rem]">
+          <Link
+            href={`${file}`}
+            className="flex items-center justify-center w-[1.25rem] h-[1.25rem] lg:w-[2.125rem] lg:h-[2.125rem]"
+            title="Download PDF"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/pdf2.svg"
+              alt="pdf"
+              width={400}
+              height={400}
+              className="w-full h-full object-cover"
+            />
+          </Link>
+          <Link
+            href={`${PATH.ACT}/${slugBefore}/${slug}`}
+            className="flex items-center justify-center "
+            title="View Document"
+          >
+            <IoEyeSharp className="text-blue-400  lg:w-[2.125rem] lg:h-[2.125rem]" />
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

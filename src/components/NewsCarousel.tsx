@@ -8,6 +8,9 @@ const NewsCarousel = async () => {
     const navNewsData = await getNavNewsData();
     const newsData: INewsRecord[] = navNewsData?.data?.records || [];
 
+    if (newsData?.length > 0) {
+      return null;
+    }
     // Pass newsData as prop to client side component
     return <NewsSwiper newsData={newsData} />;
   } catch (error) {
