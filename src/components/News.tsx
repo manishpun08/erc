@@ -1,9 +1,8 @@
 "use client";
 import { useGetDataQuery } from "@/api/api";
 import { endpoints } from "@/api/endpoints";
-import NewsCarousel from "@/components/NewsCarousel";
 import { useTranslations } from "next-intl";
-import React, { use } from "react";
+import React from "react";
 import NewsSwiper from "./NewsSwiper";
 
 const News = () => {
