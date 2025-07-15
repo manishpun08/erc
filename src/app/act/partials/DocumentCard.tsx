@@ -12,6 +12,7 @@ type DocumentCardProps = {
   slug: string;
   slugBefore: string;
   file?: string;
+  description?: string;
 };
 
 export default function DocumentCard({
@@ -20,6 +21,7 @@ export default function DocumentCard({
   slug,
   slugBefore,
   file,
+  description,
 }: DocumentCardProps) {
   const t = useTranslations("home");
   const locale = useLocale();
@@ -29,16 +31,22 @@ export default function DocumentCard({
   py-[1rem] px-[1.25rem] rounded-[0.5rem] border-l-2 border-blue-300 bg-white shadow-[0px_2px_18px_4px_rgba(51,96,169,0.06)] group cursor-pointer"
     >
       <div>
-        <Link
-          href={`${PATH.ACT}/${slugBefore}/${slug}`}
-          className="typography-p-regular text-text-500 font-medium group-hover:text-blue-500 transition-colors duration-300"
-        >
-          {title}
-        </Link>
+        {title !== "Online Application" ? (
+          <Link
+            href={`${PATH.ACT}/${slugBefore}/${slug}`}
+            className="typography-p-regular text-text-500 font-medium group-hover:text-blue-500 transition-colors duration-300"
+          >
+            {title}
+          </Link>
+        ) : (
+          <p dangerouslySetInnerHTML={{ __html: description || "" }} />
+        )}
+
         <p className="typography-p-small text-text-300 font-medium pt-[0.62rem]">
           {t("PublishedDate")}: {formatNepaliDate(date, locale)}
         </p>
       </div>
+
       <div className="flex items-center gap-[0.75rem]">
         <Link
           href={`${file}`}

@@ -53,6 +53,7 @@ const DocumentList: React.FC<DocumentListProps> = ({
               date={doc?.created_at}
               slug={doc?.slug}
               file={doc?.file}
+              description={doc?.description}
               slugBefore={params?.slug1}
             />
           )
